@@ -1,0 +1,63 @@
+.leave-content {
+    margin: 1.5rem;
+}
+
+.leave-days {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem;
+    background: #F7F7F7;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+}
+
+.leave-days p {
+    font-size: 0.8rem;
+    color: #5E5E5E;
+}
+
+.leave-request {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.leave-request a {
+    color: #5E5E5E;
+    text-decoration: none;
+}
+
+.leave-status-container {
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+}
+
+.leave-status {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem ;
+}
+
+.leave-status-info{
+    display: flex;
+    background: #F7F7F7;
+    padding: 1rem 1.5rem;
+    justify-content: space-between;
+}
+
+.leave-info {
+    display: flex;
+    align-items: center;
+}
+
+.leave-info > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.leave-date {
+    margin-left: 1rem;
+}

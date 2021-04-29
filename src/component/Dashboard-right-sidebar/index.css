@@ -1,0 +1,30 @@
+.admin-right-sidebar {
+    padding: 25px;
+}
+
+
+p.date {
+    padding: 2px;
+    width: fit-content;
+    background: #F7F7F7;
+    border: 1px solid #D9D9D9;
+    box-shadow:  3px 0px 3px rgba(128, 128, 128, 0.11);
+    border-radius:5px;
+    margin-bottom: 1rem;
+    position: relative;
+    left: 28rem;
+}
+
+hr, .p-time {
+    margin: 1rem 0;
+}
+
+hr {
+    color: #B2B2B2;
+    background: #B2B2B2;
+}
+
+.p-time {
+    font-size: 0.8rem;
+    color: #5E5E5E;
+}

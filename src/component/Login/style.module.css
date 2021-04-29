@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Roboto&family=Roboto+Condensed&display=swap');
+body {
+    background: linear-gradient(116.82deg, #413075 0.2%, #2C3A7D 10.91%, #044282 19.93%, #004984 27.27%, #005084 36.36%, #005581 45.45%, #005A7D 54.55%, #005F77 63.64%, #006271 72.73%, #00666B 81.82%, #006965 90.91%, #246C60 100%);
+    font-family: 'Roboto', sans-serif;
+}

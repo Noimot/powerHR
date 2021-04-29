@@ -1,0 +1,16 @@
+.todo-flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.todo-flex > p {
+    color: #2C4770;
+    margin-top: 1rem;
+}
+
+hr{
+    color: #fff;
+    background: #fff;
+    box-shadow: 8px 0px 3px rgba(128, 128, 128, 0.13);
+
+}

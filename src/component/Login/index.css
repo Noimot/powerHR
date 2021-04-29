@@ -1,0 +1,70 @@
+.body-background {
+    background: linear-gradient(116.82deg, #413075 0.2%, #2C3A7D 10.91%, #044282 19.93%, #004984 27.27%, #005084 36.36%, #005581 45.45%, #005A7D 54.55%, #005F77 63.64%, #006271 72.73%, #00666B 81.82%, #006965 90.91%, #246C60 100%);
+}
+
+section.login-form {
+    max-width: 588px;
+    width: 100%;
+    height: 85vh;
+    background: #fff;
+    margin: 3rem auto; 
+    border-radius: 7px; 
+    box-shadow: 10px 5px 5px rgba(128, 128, 128, 0.13) 
+}
+
+.login-form > .login-width {
+    padding: 40px;
+}
+
+.login-width input, span.password,
+.login-width button  {
+    display:block;
+}
+
+.login-width input {
+    width: 492px;
+    padding: 2.8rem 1rem 0.2rem 0.5rem;
+    margin-top: 30px;
+    background: #F7F7F7;
+    border: none;
+    border-bottom: solid;
+    outline: none;    
+}
+
+span.password {
+    float: right;
+    margin: 0.4rem 1rem 0 0;
+    color: #5E5E5E;
+    font-size: 0.9rem;
+}
+
+/* .login-width button {
+    clear: right; 
+    padding: 10px;
+    background: linear-gradient(#fff,#fff) padding-box, 
+    linear-gradient(#413075 0.2%,#2C3A7D 10.91%,#044282 19.93%,#004984 27.27%,#005084 36.36%,#005581 45.45%,#005A7D 54.55%,#005F77 63.64%,#006271 72.73%,#00666B 81.82%,#006965 90.91%,#246C60 100%) border-box;
+    border: 2px solid transparent;
+    padding: 1rem 7.2rem;
+    /* border-image: linear-gradient(#413075 0.2%,#2C3A7D 10.91%,#044282 19.93%,#004984 27.27%,#005084 36.36%,#005581 45.45%,#005A7D 54.55%,#005F77 63.64%,#006271 72.73%,#00666B 81.82%,#006965 90.91%,#246C60 100%) 15;   */
+    /* border-radius: 5px; */
+    /* background: #fff; */
+    /* margin: 4rem 6rem 2rem; */
+    /* color: #0D5146; */
+    /* font-weight: bolder; */
+/* } */
+
+/* .login-width button:hover { */
+    /* background:linear-gradient(116.82deg, #413075 0.2%,#2C3A7D 10.91%,#044282 19.93%,#004984 27.27%,#005084 36.36%,#005581 45.45%,#005A7D 54.55%,#005F77 63.64%,#006271 72.73%,#00666B 81.82%,#006965 90.91%,#246C60 100%); */
+    /* color: #fff; */
+/* } */ 
+
+p.sign-in {
+    margin-top: 45px;
+    color: #00362D;
+    font-size: 1rem;
+}
+
+.p-margin {
+    margin: 0 6.7rem;
+}
+

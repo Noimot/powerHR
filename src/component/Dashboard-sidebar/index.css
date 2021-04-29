@@ -1,0 +1,28 @@
+.admin-sidebar {
+    background: #4D658D;
+    width: 300px;
+    height: 100vh;
+    color: #fff;
+}
+
+select {
+border: none;
+outline: none;
+background: #4D658D;
+color: #fff;
+font-size: 1rem;
+cursor: pointer;
+}
+
+.admin-sidebar > *{
+    padding: 1.7rem 0 0 2rem;
+}
+
+.staff-img > img {
+    border-radius: 50%;
+}
+
+.staff-img p{
+    margin-top: 1rem;
+}
+
