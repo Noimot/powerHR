@@ -1,0 +1,40 @@
+.admin-data-container {
+    margin: 1.5rem;
+}
+
+.admin-data-container > p {
+    padding: 0 0 0.5rem 1.5rem;
+    font-weight: bolder;
+    color: #4D658D;
+}
+
+.admin-data {
+    max-width: 1064px;
+    width: 100%;
+    border: 1px solid #4D658D;
+    border-radius: 4px;
+    padding: 1.5rem;
+}
+
+.flex-display {
+    display: flex;
+}
+
+.flex-display:not(:first-child) {
+    margin-top: 2.4rem;
+}
+
+.flex-display div {
+    width: 13rem;
+}
+
+.flex-display label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #5E5E5E;
+}
+
+/* .flex-display input {
+    color: #3D3D3D;
+    font-size: 1.5rem;
+} */

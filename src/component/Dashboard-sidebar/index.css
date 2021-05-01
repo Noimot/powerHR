@@ -5,7 +5,7 @@
     color: #fff;
 }
 
-select {
+select.select-option {
 border: none;
 outline: none;
 background: #4D658D;
@@ -15,7 +15,7 @@ cursor: pointer;
 }
 
 .admin-sidebar > *{
-    padding: 1.7rem 0 0 2rem;
+    padding: 1rem 0 0 2rem;
 }
 
 .staff-img > img {
@@ -25,4 +25,9 @@ cursor: pointer;
 .staff-img p{
     margin-top: 1rem;
 }
+
+.staff-img {
+    padding-bottom: 1.5rem;
+}
+
 

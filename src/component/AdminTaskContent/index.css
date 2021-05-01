@@ -8,7 +8,7 @@
     margin-top: 1rem;
 }
 
-hr{
+.task-content-container hr{
     color: #fff;
     background: #fff;
     box-shadow: 8px 0px 3px rgba(128, 128, 128, 0.13);

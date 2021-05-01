@@ -1,0 +1,66 @@
+.employee-location, .add-employee  {
+    padding: 1.5rem;
+}
+
+.add-employee, .input-flex, .employee-location form, .employee-location,
+.employee-info-list {
+    display: flex;
+}
+
+.employee-location, .add-employee {
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+ 
+.employee-location form > p, .input-flex label {
+    color: #5E5E5E;
+}
+
+.input-flex label {
+    font-size: 0.8rem;
+}
+
+.input-flex input {
+    width: 196px;
+    border-radius: 4px;
+    padding: 0.3rem 0;
+    border: 1px solid #D9D9D9;
+    outline: 0;
+}
+
+.employee-location > p {
+    color: #4D658D;
+}
+
+.input-flex {
+    flex-direction: column;
+    margin-left: 2rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.img-employee-list > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.add-employee input {
+    width: 300px;
+    border-radius: 4px;
+    border: 1px solid #B2B2B2;
+    padding: 0.7rem;
+}
+
+.employee-info-list > * {
+    width: 8.8rem;
+}
+
+.employee-info-list {
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+}
+

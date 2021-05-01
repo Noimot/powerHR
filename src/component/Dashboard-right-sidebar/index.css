@@ -1,5 +1,6 @@
 .admin-right-sidebar {
-    padding: 25px;
+    padding-top: 200px;
+    
 }
 
 
@@ -15,11 +16,11 @@ p.date {
     left: 28rem;
 }
 
-hr, .p-time {
+.admin-right-sidebar hr, .p-time {
     margin: 1rem 0;
 }
 
-hr {
+.admin-right-sidebar hr {
     color: #B2B2B2;
     background: #B2B2B2;
 }
