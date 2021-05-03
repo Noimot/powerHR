@@ -13,6 +13,7 @@ const JobStatusComponent = () => {
     }
        
 // css style from PersonalDetailsComponent
+
     return (
         <section className='admin-data-container'>
             <p>JOB STATUS</p>

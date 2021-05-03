@@ -1,7 +1,7 @@
 .admin-sidebar {
     background: #4D658D;
     width: 300px;
-    height: 100vh;
+    min-height: 100vh;
     color: #fff;
 }
 

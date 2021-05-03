@@ -3,7 +3,7 @@ import './index.css'
 
 const AdminTaskContent = () => {
     return (
-        <section>
+        <section class='task-content-container'>
             <div className='todo-flex'>
             <p>To-do</p>
             <p>Completed</p>

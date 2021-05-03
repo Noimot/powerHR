@@ -1,5 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
+import AddEmployeeForm from '../component/AddEmployeeForm'
 import { AdminDashboard } from '../component/Admin-dashboard'
 import AdminLeave from '../component/AdminLeave'
 import AdminMemo from '../component/AdminMemo'
@@ -14,6 +15,7 @@ import { Salary } from '../component/Salary'
 
 const Routes = () => (
     <Switch>
+        <Route exact path='/addemployee' component={AddEmployeeForm} />
         <Route exact path='/salary' component={Salary} />
         <Route exact path='/jobstatus' component={JobStatus} />
         <Route exact path='/contactdetails' component={ContactDetails} />

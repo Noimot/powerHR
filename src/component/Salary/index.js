@@ -18,6 +18,8 @@ export const SalaryComponent = () => {
                         <input type='text' name='department' value='' placeholder='Research' />
                     </div>
                     <Checkbox
+//   value="checkedA"
+//   inputProps={{ 'aria-label': 'Checkbox A' }}
 />
                     
                 </div>

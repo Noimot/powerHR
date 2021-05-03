@@ -2,9 +2,15 @@ import React, { useState, useEffect } from 'react'
 import logo from './powerHR-logo.svg'
 import './index.css'
 import Button from '../Button'
+import { LoginData } from '../../redux/action/loginData'
+import { useSelector, useDispatch } from 'react-redux'
+
 // import styles from './style.module.css'
 
 const Login = () => {
+
+    const dispatch = useDispatch();
+    const loginStore = useSelector(({ loginReducer }) => loginReducer)
 
     const [loginInfo, setLoginInfo] = useState({
         id: '',
@@ -15,6 +21,12 @@ const Login = () => {
         document.body.className = 'body-background';
     }, []);
 
+    useEffect(() => {
+        if (loginStore.loginSuccess){
+            window.location.href = '/admindashboard'
+        }
+    })
+
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -24,6 +36,11 @@ const Login = () => {
     const handleClick = (e) => {
         e.preventDefault()
         console.log(loginInfo.id, loginInfo.password)
+
+        dispatch(LoginData({
+            adminId: loginInfo.id,
+            password: loginInfo.password       
+        }))
     }
 
     return (
