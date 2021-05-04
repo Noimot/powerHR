@@ -3,7 +3,7 @@ import Button from '../Button'
 import './index.css'
 
 
-const AddEmployeeForm = () => {
+const AddEmployeeForm = ({modalHandler}) => {
 
     const [ employeeData, setEmployeeData ] = useState({
         employee_id: '',
@@ -23,7 +23,7 @@ const AddEmployeeForm = () => {
 
                 <div>
                     <div>Add New Employee</div>
-                    <div className='remove-employee-modal'>x</div>
+                    <div className='remove-employee-modal' onClick={ () => modalHandler(false)}>x</div>
                 </div>
                 <form>
                     <div className='add-employee-form'>

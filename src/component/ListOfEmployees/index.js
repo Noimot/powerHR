@@ -1,14 +1,22 @@
 import React, { useState } from 'react'
 import './index.css'
 import img from './../Dashboard-sidebar/b.jpg'
+import EmployeeModal from './employee_modal'
 
 const ListOfEmployees = () => {
+
+    const [open, setOpen ]  = useState(false);
+
+    const modalHandler = (state) => {
+        setOpen(state)
+    }
 
     const [searchInput, setSearchInput] = useState({
         department: '',
         location: '',
         search: ''
     })
+
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -37,7 +45,7 @@ const ListOfEmployees = () => {
             <hr />
 
             <div className='add-employee'>
-                <p style={{ color: '#246C60' }}><span style={{ cursor: 'pointer' }}> + </span>add new Employee</p>
+                <p style={{ color: '#246C60' }} onClick={() => modalHandler(true)}><span style={{ cursor: 'pointer' }} > + </span>add new Employee</p>
                 <div>
                     <input type='text' name='search' value={searchInput.search} onChange={handleChange} placeholder='Search name' />
                     <span></span>
@@ -66,9 +74,12 @@ const ListOfEmployees = () => {
                 <li>samantha@company.com</li>
             </ul>
 
-
+        <EmployeeModal open={open} modalHandler={modalHandler} />
         </section>
     )
 }
 
 export default ListOfEmployees;
+
+
+
