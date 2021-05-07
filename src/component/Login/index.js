@@ -55,7 +55,7 @@ const Login = () => {
                         <span className='password'>Forgot password?</span>
                         {/* <button onClick={handleClick}> SIGN IN</button> */}
                         <Button onClick={handleClick} buttonClick='SIGN IN' />
-                        <p className='p-margin'>Don't have an account yet? <span style={{ color: '#246C60' }}>Sign up</span></p>
+                        {/* <p className='p-margin'>Don't have an account yet? <span style={{ color: '#246C60' }}>Sign up</span></p> */}
                     </form>
 
                 </div>

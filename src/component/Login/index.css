@@ -22,9 +22,9 @@ section.login-form {
 }
 
 .login-width input {
-    width: 492px;
+    width: 31rem;
     padding: 2.8rem 1rem 0.2rem 0.5rem;
-    margin-top: 30px;
+    margin-top: 35px;
     background: #F7F7F7;
     border: none;
     border-bottom: solid;
@@ -68,3 +68,44 @@ p.sign-in {
     margin: 0 6.7rem;
 }
 
+
+
+@media (max-width: 850px){
+    .login-width input {
+        width: 25rem;
+        padding: 2.8rem 0.5rem 0.2rem 0.5rem;
+
+    }
+
+    section.login-form {
+        max-width: 32rem;
+    }
+}
+
+@media (max-width: 680px){
+    .login-width input {
+        width: 20rem;
+        padding: 2.8rem 0.5rem 0.2rem 0.5rem;
+
+    }
+    
+
+    section.login-form {
+        max-width: 28rem;
+    }
+}
+
+@media (max-width: 400px){
+    .login-width input {
+        width: 15rem;
+        padding: 2.8rem 0.5rem 0.2rem 0.5rem;
+
+    }
+    /* span.password {     
+        margin: 0.4rem 0 0 0;
+    } */
+
+    section.login-form {
+        max-width: 20rem;
+    }
+}

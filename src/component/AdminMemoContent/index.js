@@ -2,7 +2,7 @@ import React from 'react'
 
 const MemoContent = () => {
     return (
-        <div>
+        <div className='memo-content'>
             <hr />
 
         </div>

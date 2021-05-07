@@ -1,3 +1,7 @@
+.employee-list-container {
+    margin-top: 3rem;
+}
+
 .employee-location, .add-employee  {
     padding: 1.5rem;
 }

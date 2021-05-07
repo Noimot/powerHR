@@ -7,7 +7,7 @@ import { SalaryComponent } from '../Salary'
 
 const Profile = () => {
     return (
-        <DashboardLayout>
+        <DashboardLayout className='profile-container'>
             <PersonalDetailsComponent />
             <ContactDetailsComponent />
             <JobStatusComponent />
