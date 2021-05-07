@@ -5,28 +5,28 @@ import './index.css'
 
 
 
-const navTitle = () => {
-    const path = window.location.pathname;
-    switch (path) {
-        case '/admindashbord':
-            return `
-            <div>
-                <div>title='GENERAL ANNOUNCEMENTS'<div> 
-                <div>addTitle={<AddNewAnnouncement />}<div> 
-            </div>
-            `
-        case '/admintask':
-            return `
-                <div>
-                <div>title='task'<div> 
-                <div>addTitle='add task'<div> 
-            </div>
-                `
-        default:
-            break;
+// const navTitle = () => {
+//     const path = window.location.pathname;
+//     switch (path) {
+//         case '/admindashbord':
+//             return `
+//             <div>
+//                 <div>title='GENERAL ANNOUNCEMENTS'<div> 
+//                 <div>addTitle={<AddNewAnnouncement />}<div> 
+//             </div>
+//             `
+//         case '/admintask':
+//             return `
+//                 <div>
+//                 <div>title='task'<div> 
+//                 <div>addTitle='add task'<div> 
+//             </div>
+//                 `
+//         default:
+//             break;
 
-    }
-}
+//     }
+// }
 
 
 
@@ -45,7 +45,7 @@ export const DashboardLayout = (props) => {
         <div className='admin-display-flex'>
             <AdminSidebar />
             <div className='admin-content'>
-                <Navbar  title={navTitle()} />
+                <Navbar  title={'GENERAL ANNOUNCEMENTS'} addTitle={<AddNewAnnouncement />} />
                 {props.children}
             </div>
         </div>
