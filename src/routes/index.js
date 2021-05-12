@@ -12,6 +12,7 @@ import Login from '../component/Login'
 import PersonalDetails from '../component/PersonalDetails'
 import Profile from '../component/Profile'
 import { Salary } from '../component/Salary'
+import PageNotFound from '../component/PageNotFound'
 
 const Routes = () => (
     <Switch>
@@ -27,6 +28,7 @@ const Routes = () => (
         <Route exact path='/admintask' component={AdminTask} />
         <Route exact path='/admindashboard' component={AdminDashboard} />
         <Route exact path='/' component={Login} />
+        <Route exact path='*' component={PageNotFound} />
     </Switch>
 )
 

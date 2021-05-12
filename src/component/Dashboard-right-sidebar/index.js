@@ -1,7 +1,9 @@
 import React from 'react'
 import './index.css'
 
+
 const DashboardContent = () => {
+    
 
     // const current = Date().toString()
     const current = new Date()
@@ -48,6 +50,7 @@ const DashboardContent = () => {
                 hhfhhhghhgh
                 <p className='p-time'>{time}</p>
             </div>
+
         </div>
     )
 }

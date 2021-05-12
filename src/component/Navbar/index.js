@@ -1,12 +1,12 @@
 import React from 'react'
-import './index.css'
 
-const Navbar = ( {title, addTitle}) => {
+
+// content props is passed from layout
+const Navbar = ( {content}) => {
     return (
         <section>
-            <div className='admin-navbar'>
-                <p>{title}</p>
-                <p>{addTitle}</p>
+            <div>
+                {content}
             </div>
         </section>
 

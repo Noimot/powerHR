@@ -3,7 +3,7 @@ import './index.css'
 
 const PersonalDetailsComponent = () => {
     return (
-        <section className='admin-data-container'>
+        <section className='admin-data-container' id='personal-details'>
             <p>PERSONAL DETAILS</p>
             <div className='admin-data'>
                 <div className='flex-display'>

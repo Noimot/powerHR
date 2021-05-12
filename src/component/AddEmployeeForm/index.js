@@ -1,11 +1,12 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Button from '../Button'
 import './index.css'
 
 
-const AddEmployeeForm = ({modalHandler}) => {
+const AddEmployeeForm = ({ modalHandler }) => {
 
-    const [ employeeData, setEmployeeData ] = useState({
+    const [employeeData, setEmployeeData] = useState({
+        employee_name:'',
         employee_id: '',
         personal_email: '',
         office_email: ''
@@ -14,7 +15,7 @@ const AddEmployeeForm = ({modalHandler}) => {
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        setEmployeeData({...employeeData, [name]: value})
+        setEmployeeData({ ...employeeData, [name]: value })
     }
 
     return (
@@ -23,9 +24,13 @@ const AddEmployeeForm = ({modalHandler}) => {
 
                 <div>
                     <div>Add New Employee</div>
-                    <div className='remove-employee-modal' onClick={ () => modalHandler(false)}>x</div>
+                    <div className='remove-employee-modal' onClick={() => modalHandler(false)}>x</div>
                 </div>
                 <form>
+                    <div className='add-employee-form'>
+                        <label htmlFor='employee_id'>EMPLOYEE'S NAME</label>
+                        <input type='text' name='employee_id' value={employeeData.employee_name} id='employee_id' placeholder='Samantha Adeleke' onChange={handleChange} />
+                    </div>
                     <div className='add-employee-form'>
                         <label htmlFor='employee_id'>ENTER NEW ID NUMBER</label>
                         <input type='text' name='employee_id' value={employeeData.employee_id} id='employee_id' placeholder='0250' onChange={handleChange} />
@@ -36,9 +41,9 @@ const AddEmployeeForm = ({modalHandler}) => {
                     </div>
                     <div className='add-employee-form'>
                         <label htmlFor='employee_id'>EMPLOYEES POWER HR ACCOUNT EMAIL</label>
-                        <input type='text' name='office_email' value={employeeData.office_email} id='employee_id' placeholder='Noimot@powerhr.com'  onChange={handleChange}/>
+                        <input type='text' name='office_email' value={employeeData.office_email} id='employee_id' placeholder='Noimot@powerhr.com' onChange={handleChange} />
                     </div>
-                   <div className='button-div'><Button cssClass='secondary-button' buttonClick='ADD NEW EMPLOYEE' /></div> 
+                    <div className='button-div'><Button cssClass='secondary-button' buttonClick='ADD NEW EMPLOYEE' /></div>
 
 
                 </form>

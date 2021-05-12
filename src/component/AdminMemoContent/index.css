@@ -1,3 +1,76 @@
 .memo-content {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
+
+.memo-modal-container {
+  max-width: 430px;
+  width: 100%;
+  background-color: #FFF;
+  border: 0.5px solid #5e5e5e;
+  box-shadow: 0px 3px 8px rgba(51, 51, 51, 0.15);
+  border-radius: 4px;
+  
+}
+
+.memo-modal-container > form, .memo-header {
+    padding: 1rem 1.5rem;
+
+}
+
+.memo-modal-container > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.memo-header {
+    display: flex;
+    background-color: #2C4770;
+    justify-content: space-between;
+}
+
+.form-addressed-to, .memo-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-addressed-to > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-addressed-to .checkbox-flex {
+    display: flex;
+    color: #246C60;
+}
+
+.checkbox-flex > select {
+    border: none;
+    outline: 0;
+    color: #246C60;
+}
+
+.memo-input {
+    margin-top: 1.5rem;
+}
+
+.form-addressed-to > input {
+    margin-top: 0.7rem;
+}
+
+form input {
+    border: none;
+    border-bottom: 0.5px solid #5E5E5E;
+    outline: 0;
+}
+
+form > section:nth-child(2) > input{
+    background: #F7F7F7;
+    padding-top: 1.5rem;
+}
+
+form > section:nth-child(3) > input{
+    background: #F7F7F7;
+    padding-top: 4rem;
+}
+

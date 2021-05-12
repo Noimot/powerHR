@@ -1,21 +1,22 @@
+import { Checkbox, FormGroup, FormControlLabel } from '@material-ui/core';
 import React, { useState } from 'react'
 
 
 const JobStatusComponent = () => {
 
-    const [employeeStatus, setEmployeeStatus] = useState({
-        Active: false,
-        Dismissed: false
-    });
+    // const [employeeStatus, setEmployeeStatus] = useState({
+    //     Active: false,
+    //     Dismissed: false
+    // });
 
-    const handleToggle = ({ target }) => {
-        setEmployeeStatus(s => ({ ...s, [target.name]: !s[target.name] }));
-    }
+    // const handleToggle = ({ target }) => {
+    //     setEmployeeStatus(s => ({ ...s, [target.name]: !s[target.name] }));
+    // }
        
 // css style from PersonalDetailsComponent
 
     return (
-        <section className='admin-data-container'>
+        <section className='admin-data-container' id='job-status'>
             <p>JOB STATUS</p>
             <div className='admin-data'>
                 <div className='flex-display'>
@@ -50,15 +51,38 @@ const JobStatusComponent = () => {
                     <div>
                         <label>Employment status</label>
                         
-                            {Object.keys(employeeStatus).map(key => (
-                                <input
-                                    type="checkbox"
-                                    onChange={handleToggle}
-                                    key={key}
-                                    name={key}
-                                    checked={employeeStatus[key]}
-                                />
-                            ))}
+                        <FormGroup row>
+                        <FormControlLabel
+                          control={
+                            <Checkbox
+                              // checked={state.checkedA}
+                              // onChange={handleChange}
+                              name="checkedA"
+                            />
+                          }
+                          label="Verve"
+                        />
+                        <FormControlLabel
+                          control={
+                            <Checkbox
+                              // checked={state.checkedA}
+                              // onChange={handleChange}
+                              name="checkedA"
+                            />
+                          }
+                          label="Master Card"
+                        />
+                        <FormControlLabel
+                          control={
+                            <Checkbox
+                              // checked={state.checkedA}
+                              // onChange={handleChange}
+                              name="checkedA"
+                            />
+                          }
+                          label="Visa Card"
+                        />
+                      </FormGroup>
                         
 
                     </div>

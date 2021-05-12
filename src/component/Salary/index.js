@@ -5,7 +5,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 export const SalaryComponent = () => {
     return (
-        <section className='admin-data-container'>
+        <section className='admin-data-container' id='salary'>
             <p>SALARY</p>
             <div className='admin-data'>
                 <div className='flex-display'>

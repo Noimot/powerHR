@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Roboto&family=Roboto+Condensed&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;    
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 html {
@@ -14,4 +13,8 @@ html {
 
 body {
   height: 100%;
+}
+
+.pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-header{
+  border-bottom: none !important;
 }

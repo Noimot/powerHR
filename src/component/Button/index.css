@@ -1,14 +1,11 @@
 .primary-button {
     clear: right; 
-    padding: 0.8rem;
     background: linear-gradient(#fff,#fff) padding-box, 
     linear-gradient(#413075 0.2%,#2C3A7D 10.91%,#044282 19.93%,#004984 27.27%,#005084 36.36%,#005581 45.45%,#005A7D 54.55%,#005F77 63.64%,#006271 72.73%,#00666B 81.82%,#006965 90.91%,#246C60 100%) border-box;
     border: 2px solid transparent;
-    padding: 1rem 7.2rem;
-    /* border-image: linear-gradient(#413075 0.2%,#2C3A7D 10.91%,#044282 19.93%,#004984 27.27%,#005084 36.36%,#005581 45.45%,#005A7D 54.55%,#005F77 63.64%,#006271 72.73%,#00666B 81.82%,#006965 90.91%,#246C60 100%) 15;   */
+    padding: 20px 90px;
     border-radius: 5px;
-    /* background: #fff; */
-    margin: 4rem 6rem 2rem;
+    margin: 4rem 4rem 2rem;
     color: #0D5146;
     font-weight: bolder;
     display: block;
@@ -44,7 +41,7 @@
     color: #fff;
 }
 
-
+/* 
 @media (max-width: 480px){
     .primary-button {
         clear: right; 
@@ -53,4 +50,4 @@
         margin: 4rem 2rem 2rem;
         font-size: 0.7rem;     
     }
-}
+} */

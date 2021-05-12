@@ -6,7 +6,7 @@ const ContactDetailsComponent = () => {
 
 
     return (
-        <section className='admin-data-container'>
+        <section className='admin-data-container' id='contact-details'>
             <p>CONTACT DETAILS</p>
             <div className='admin-data'>
                 <div className='flex-display'>

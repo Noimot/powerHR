@@ -3,7 +3,7 @@ import { LOGIN_USER_FAILURE, LOGIN_USER_SUCCESS, LOGIN_USER_REQUEST } from '../a
 
 
 export const LoginData = (data) => async(dispatch) => {
-    // try {
+    try {
         dispatch({
             type: LOGIN_USER_REQUEST,
         });
@@ -23,27 +23,27 @@ export const LoginData = (data) => async(dispatch) => {
                     error: 'Failed to LOGIN user'
                 }
             })
-        // }       
+        }       
     }
-    // catch (error) {
-    //     const status = error.response.status;
-    //     if (status === 404) {
-    //         dispatch({
-    //             type: LOGIN_USER_FAILURE,
-    //             payload: {
-    //                 error: 'username or userid is incorrect'
-    //             }
-    //         })
-    //     }
+    catch (error) {
+        const status = error.response.status;
+        if (status === 404) {
+            dispatch({
+                type: LOGIN_USER_FAILURE,
+                payload: {
+                    error: 'username or userid is incorrect'
+                }
+            })
+        }
 
-    //     else {
-    //      dispatch({
-    //          type: LOGIN_USER_FAILURE,
-    //          payload: {
-    //              error: 'something went wrong, try again!'
-    //          }
-    //      })   
-    //     }
+        else {
+         dispatch({
+             type: LOGIN_USER_FAILURE,
+             payload: {
+                 error: 'something went wrong, try again!'
+             }
+         })   
+        }
 
-   // }
+    }
 }

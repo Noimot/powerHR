@@ -1,49 +1,64 @@
-import React, { useState } from 'react'
-import img from './b.jpg'
+import React from 'react'
+import { ProSidebar, SidebarHeader, SidebarFooter, SidebarContent, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import { Avatar} from '@material-ui/core'
 import './index.css'
+import './styles.css'
+// import 'react-pro-sidebar/dist/css/styles.css';
+import svg from './images/dashboard-icon.svg'
+import svgList from './images/list-icon.svg'
+import svgLogout from './images/logout-box-line.svg'
+import svgProfile from './images/profile-icon.svg'
+import { Link } from 'react-router-dom'
 
 
-const AdminSidebar = () => {
-
-    const [dashboardMenu, setDashboardMenu] = useState('');
-    const [personalInfo, setPersonalInfo] = useState('');
+export default function index() {
     return (
-        <section className='admin-sidebar'>
-            <div className='staff-img'>
-                <img src={img} alt='admin' style={{ width: '100px', height: '100px' }} />
-                <p>Welcome, <br /> admin name</p>
-            </div>
-            <div>
-                <select className='select-option' value={dashboardMenu} onChange={e => setDashboardMenu(e.target.value)}>
-                    <option value='Dashboard'>Dashboard</option>
-                    <option value='General announcement'>General announcements</option>
-                    <option value='Tasks'>Tasks</option>
-                    <option value='Memos'>Memos</option>
-                    <option value='Paid Leave'>Paid Leave</option>
-                </select>
-            </div>
+        <>
+
+            <ProSidebar>
+                <SidebarHeader>
+                    <div className='header-sidebar-custom'>
+                        <Avatar src='https://picsum.photos/200/300.jpg'>
+
+                        </Avatar>
+                        <p className='header-tag'>Welcome,</p>
+                        <p className='admin-name'>Admin name</p>
+                    </div>
+                    {/**
+     *  You can add a header for the sidebar ex: logo
+     */}
+                </SidebarHeader>
+                <SidebarContent>
+                    {/**
+     *  You can add the content of the sidebar ex: menu, profile details, ...
+     */}
+                    <Menu iconShape="square">
+                        <SubMenu title="Dashboard" style={{color:'#fff'}} icon={<img src={svg} alt='dashboard icon' />}>
+                            <MenuItem><Link to='/admindashboard'>General announcement</Link></MenuItem>
+                            <MenuItem><Link to='/admintask'>Tasks</Link></MenuItem>
+                            <MenuItem><Link to='/adminmemo'>Memos</Link></MenuItem>
+                            <MenuItem><Link to='/adminleave'>Paid leave</Link></MenuItem>
+                        </SubMenu>
+                       <SubMenu title="Profile" icon={<img src={svgProfile} alt='profile icon' />}>
+                            <MenuItem><a href='/profile/#personal-details'>Personal details</a></MenuItem>
+                            <MenuItem><a href='#contact-details'>Contact details</a></MenuItem>
+                            <MenuItem><a href='#'>Work hours</a></MenuItem>
+                            <MenuItem><a href='#salary'>Salary</a></MenuItem>
+                            <MenuItem><a href='#'>Documents</a></MenuItem>
+                            <MenuItem><a href='#'>Social media accounts</a></MenuItem>
+                        </SubMenu>
+                        <MenuItem icon={<img src={svgList} alt='employees list icon' />}><Link to='/employeelist'>Employees list</Link></MenuItem>
+                        <MenuItem icon={<img src={svgLogout} alt='logout icon' />}><Link to='/'>Sign out</Link></MenuItem>
 
 
-            <div>
-                <select className='select-option' value={personalInfo} onChange={e => setPersonalInfo(e.target.value)}>
-                    <option value='Profile'>Profile</option>
-                    <option value='Personal details'>Personal details</option>
-                    <option value='Contact details'>Contact details</option>
-                    <option value='Job status'>Job status</option>
-                    <option value='Work hours'>Work hours</option>
-                    <option value='Salary'>Salary</option>
-                    <option value='Documents'>Documents</option>
-                    <option value='Social media accounts'>Social media accounts</option>
-                </select>
-            </div>
-
-
-            <p>Employees list</p>
-
-            <p>Sign out</p>
-
-        </section>
+                    </Menu>
+                </SidebarContent>
+                <SidebarFooter>
+                    {/**
+     *  You can add a footer for the sidebar ex: copyright
+     */}
+                </SidebarFooter>
+            </ProSidebar>
+        </>
     )
 }
-
-export default AdminSidebar;
