@@ -3,7 +3,7 @@ import axios from 'axios'
 export const userToken = () => {
     const token = localStorage.getItem('accessToken')
     if (token) {
-        return JSON.parse(localStorage.getItem('accessToken'))
+        return token;
     }
     return null;
 }
