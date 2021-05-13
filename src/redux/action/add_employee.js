@@ -34,4 +34,6 @@ const AddNewEmployee = (data) = async(dispatch) => {
             }
         });
     }
-}   
+} 
+
+export default AddNewEmployee;
