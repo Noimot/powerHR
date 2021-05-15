@@ -8,7 +8,7 @@ export default function TaskForm({modalHandler}) {
         <div className='add-announcement-form'>
             <form>
                 <input type='text' name='text' value={task} onChange={(e) => setTask(e.target.value)} />
-                <div className='add-announcement-div'>
+                <div className='add-announcement-div' style={{ cursor: 'pointer' }}>
                     <p>save</p>
                     <p onClick={() => modalHandler(false)}>cancel</p>
                 </div>

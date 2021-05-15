@@ -31,7 +31,7 @@ export const LoginData = (data) => async(dispatch) => {
             dispatch({
                 type: LOGIN_USER_FAILURE,
                 payload: {
-                    error: 'username or userid is incorrect'
+                    error: 'userid or password is incorrect'
                 }
             })
         }

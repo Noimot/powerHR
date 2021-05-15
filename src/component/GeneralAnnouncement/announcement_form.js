@@ -8,7 +8,7 @@ const AnnouncementForm = ({modalHandler}) => {
         <section className='add-announcement-form'>
             <form>
                 <input type='text' name='text' value={formValue} onChange={(e)=>setFormValue(e.target.value)} />
-                <div className='add-announcement-div'>
+                <div className='add-announcement-div' style={{cursor: 'pointer' }}>
                     <p>save</p>
                     <p onClick={() => modalHandler(false)}>cancel</p>
                 </div>

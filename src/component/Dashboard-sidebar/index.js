@@ -33,14 +33,14 @@ export default function index() {
      *  You can add the content of the sidebar ex: menu, profile details, ...
      */}
                     <Menu iconShape="square">
-                        <SubMenu title="Dashboard" style={{color:'#fff'}} icon={<img src={svg} alt='dashboard icon' />}>
+                        <SubMenu title={<Link to='/admindashboard'>Dashboard</Link>} style={{color:'#fff'}} icon={<img src={svg} alt='dashboard icon' />}>
                             <MenuItem><Link to='/admindashboard'>General announcement</Link></MenuItem>
                             <MenuItem><Link to='/admintask'>Tasks</Link></MenuItem>
                             <MenuItem><Link to='/adminmemo'>Memos</Link></MenuItem>
                             <MenuItem><Link to='/adminleave'>Paid leave</Link></MenuItem>
                         </SubMenu>
-                       <SubMenu title="Profile" icon={<img src={svgProfile} alt='profile icon' />}>
-                            <MenuItem><a href='/profile/#personal-details'>Personal details</a></MenuItem>
+                       <SubMenu title={<Link to='/profile'>Profile</Link>} icon={<img src={svgProfile} alt='profile icon' />}>
+                            <MenuItem><a href='#personal-details'>Personal details</a></MenuItem>
                             <MenuItem><a href='#contact-details'>Contact details</a></MenuItem>
                             <MenuItem><a href='#'>Work hours</a></MenuItem>
                             <MenuItem><a href='#salary'>Salary</a></MenuItem>

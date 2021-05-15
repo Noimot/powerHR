@@ -1,7 +1,7 @@
 import addEmployeeApi from '../api/add_employee'
 import { ADD_USER_FAILURE, ADD_USER_REQUEST, ADD_USER_SUCCESS } from '../actionTypes'
 
-const AddNewEmployee = (data) = async(dispatch) => {
+const AddNewEmployee = (data) => async(dispatch) => {
     try {
         dispatch({
             type: ADD_USER_REQUEST,

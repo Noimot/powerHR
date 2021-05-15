@@ -4,6 +4,7 @@ import PersonalDetailsComponent from '../PersonalDetailsComponent'
 import ContactDetailsComponent from '../ContactDetailsComponent'
 import JobStatusComponent from '../JobStatusComponent'
 import { SalaryComponent } from '../Salary'
+import './index.css'
 
 const Profile = () => {
     return (

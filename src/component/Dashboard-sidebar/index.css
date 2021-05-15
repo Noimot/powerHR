@@ -16,8 +16,8 @@ cursor: pointer;
 }
 
 .header-sidebar-custom{
-    padding: 30px 20px;
-    padding-left: 60px;
+    padding: 30px 20px 30px 35px;
+    /* padding-left: 60px; */
 }
 
 .header-sidebar-custom .header-tag, .header-sidebar-custom .admin-name {
