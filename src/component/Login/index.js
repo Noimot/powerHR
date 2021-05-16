@@ -55,7 +55,8 @@ const Login = () => {
                         <span className='password'>Forgot password?</span>
                         {/* <button onClick={handleClick}> SIGN IN</button> */}
                         <Button onClick={handleClick} buttonClick='SIGN IN' />
-                        {/* {!loginInfo.id || !loginInfo.passpowrd ? <p style={{ color: 'red' }} className='p-margin'>{loginStore.loginError}</p> : 'login successful' } */}
+                        {loginStore.loginError && <p className='login'>incorrect login credentials</p>}
+                        {loginStore.loginSuccess && <p>loggin in ...</p>}
                     </form>
 
                 </div>

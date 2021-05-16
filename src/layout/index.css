@@ -1,11 +1,18 @@
 .admin-display-flex {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
 }
 
+.admin-content{
+    display: flex;
+    flex-direction: column;
+}
 
 .side-wrapper{
-    min-height: 100vh;
+    height: 100vh;
+}
+.layout-children{
+    overflow: auto;
 }
 
 

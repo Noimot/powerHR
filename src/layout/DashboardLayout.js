@@ -40,8 +40,8 @@ const AddNewAnnouncement = () => {
     return (
         <div className='admin-navbar'>
             <p>GENERAL ANNOUNCEMENT</p>
-            <div style={{ color: '#D9D9D9', cursor: 'pointer' }}>
-                <span onClick={() => modalHandler(true)}>+  </span>
+            <div style={{ color: '#D9D9D9', cursor: 'pointer' }} onClick={() => modalHandler(true)}>
+                <span>+  </span>
             New announcement
             </div>
 
@@ -62,8 +62,8 @@ const AddNewTask = () => {
         
         <div className='admin-navbar' >
             <p>TASKS</p>
-            <div style={{ color: '#D9D9D9', cursor: 'pointer' }}>
-                <span onClick={() => modalHandler(true) }>+  </span>
+            <div style={{ color: '#D9D9D9', cursor: 'pointer' }} onClick={() => modalHandler(true)}>
+                <span>+  </span>
             Assign new task
             </div>
             <TaskModal open={open} modalHandler={modalHandler} />
@@ -82,8 +82,8 @@ const AddNewMemo = () => {
     return (
         <div className='admin-navbar'>
             <p>MEMOS</p>
-            <div style={{ color: '#D9D9D9', cursor: 'pointer' }}>
-                <span onClick={() => setOpen(true)}>+  </span>
+            <div style={{ color: '#D9D9D9', cursor: 'pointer' }} onClick={() => modalHandler(true)}>
+                <span>+  </span>
             create new memo
             </div>
 
@@ -129,7 +129,9 @@ export const DashboardLayout = (props) => {
             </div>
             <div className='admin-content'>
                 <Navbar content={navTitle()} />
+                <div className="layout-children">
                 {props.children}
+                </div>
             </div>
 
         </div>

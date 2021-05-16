@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ProSidebar, SidebarHeader, SidebarFooter, SidebarContent, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import { Avatar} from '@material-ui/core'
 import './index.css'
@@ -9,9 +9,21 @@ import svgList from './images/list-icon.svg'
 import svgLogout from './images/logout-box-line.svg'
 import svgProfile from './images/profile-icon.svg'
 import { Link } from 'react-router-dom'
+import Admin  from '../../redux/action/adminName'
+import { useDispatch , useSelector } from 'react-redux';
 
 
-export default function index() {
+export default function Index() {
+
+    const dispatch = useDispatch();
+    const adminStore = useSelector(({adminReducer}) => adminReducer)
+    const adminName = adminStore.data.name
+    console.log(adminName)
+    
+    useEffect(() => {
+      dispatch(Admin())
+    },[dispatch])
+
     return (
         <>
 
@@ -22,7 +34,8 @@ export default function index() {
 
                         </Avatar>
                         <p className='header-tag'>Welcome,</p>
-                        <p className='admin-name'>Admin name</p>
+                        
+                        <p className='admin-name'>{adminName}</p>
                     </div>
                     {/**
      *  You can add a header for the sidebar ex: logo

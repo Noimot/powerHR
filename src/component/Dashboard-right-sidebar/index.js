@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './index.css'
+import allAnnouncement from '../../redux/action/announcement.js'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 const DashboardContent = () => {
     
-
+const dispatch = useDispatch();
+const announcementStore = useSelector(({announcement}) => announcement)
     // const current = Date().toString()
+    useEffect(()=>{
+        dispatch(allAnnouncement())
+    },[dispatch])
+
+    console.log(announcementStore.allAnnouncement)
+
     const current = new Date()
 
     var weekday = new Array(7);
@@ -41,15 +50,13 @@ const DashboardContent = () => {
         <div className='admin-right-sidebar'>
             <p className='date'>{date}</p>
             <hr />
-            <div>
-                fhhthhthhhhghgg
-                <p className='p-time'>{time}</p>
-            </div>
-            <hr />
-            <div>
-                hhfhhhghhgh
-                <p className='p-time'>{time}</p>
-            </div>
+                {announcementStore.allAnnouncement.map((eachAnnouncement) => {
+                    return <div key={eachAnnouncement.id}>{eachAnnouncement.announcements}
+                    <p className='p-time'>{eachAnnouncement.date_posted}</p>
+                    <hr />
+                    </div>   
+                })
+                }
 
         </div>
     )
