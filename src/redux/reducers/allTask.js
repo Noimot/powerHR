@@ -1,6 +1,6 @@
-import { GET_USER_FAILURE, GET_USER_REQUEST, GET_USER_SUCCESS } from '../actionTypes'
+import { GET_TASK_REQUEST, GET_TASK_FAILURE, GET_TASK_SUCCESS } from '../actionTypes'
 
-const initialValue = {
+const initialState = {
     loading: false,
     loginError: false,
     getTasks: [],
@@ -8,21 +8,21 @@ const initialValue = {
     loginSuccess: false
 }
 
-const taskReducer = (state = initialValue, { type, payload }) => {
+const taskReducer = (state = initialState, { type, payload }) => {
     switch (type) {
-        case GET_USER_REQUEST:
+        case GET_TASK_REQUEST:
             return {
                 ...state,
                 loading: true,
             }
-        case GET_USER_SUCCESS:
+        case GET_TASK_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 loginSuccess: true,
                 getTasks: payload.result
             }
-        case GET_USER_FAILURE:
+        case GET_TASK_FAILURE:
             return {
                 ...state,
                 loading: false,

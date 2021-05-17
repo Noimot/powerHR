@@ -21,5 +21,8 @@
     background: #fff;
     box-shadow: 8px 0px 3px rgba(128, 128, 128, 0.13);
     width: 1095px;
+}
 
+.all-tasks {
+    padding: 2rem 2rem 0 ;
 }

@@ -34,13 +34,7 @@ const allAnnouncement = () => async(dispatch) => {
             }
         })
     }
-    // const response =await getAllAnnouncement();
-    // const {announcements} = response.data;
-    // console.log(announcements)
-    // return (dispatch)=>dispatch({
-    //     type:'ALL_ANNOUNCEMENT',
-    //     payload:announcements
-    // });
+
 }
 
 

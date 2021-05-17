@@ -13,8 +13,8 @@ const adminReducer = (state = initialValue, { type, payload }) => {
                 loginSuccess: true,
                 data: payload.result
             }
-            default:
-                return state;
+        default:
+            return state;
     }
 }
 

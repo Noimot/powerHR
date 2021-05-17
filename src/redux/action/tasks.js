@@ -1,23 +1,25 @@
 import { allTasks } from '../api/taskApi'
-import { GET_USER_REQUEST, GET_USER_FAILURE, GET_USER_SUCCESS } from '../actionTypes'
+import { GET_TASK_REQUEST, GET_TASK_FAILURE, GET_TASK_SUCCESS } from '../actionTypes'
 
 const getAllTasks = () => async(dispatch) => {
     try {
         dispatch({
-            type: GET_USER_REQUEST
+            type: GET_TASK_REQUEST
         });
-        const response = await allTasks()
-        if (response.status === 200) {
+        const response = await allTasks();
+
+        if(response.status === 201) {
             dispatch({
-                type: GET_USER_SUCCESS,
+                type: GET_TASK_SUCCESS,
                 payload: {
                     result: response.data
                 }
             });
+            
         }
         else {
             dispatch({
-                type: GET_USER_FAILURE,
+                type: GET_TASK_FAILURE,
                 payload: {
                     error: 'failed to get data'
                 }
@@ -26,7 +28,7 @@ const getAllTasks = () => async(dispatch) => {
     }
     catch {
         dispatch({
-            type: GET_USER_FAILURE,
+            type: GET_TASK_FAILURE,
             payload: {
                 error: 'an error occur'
             }
