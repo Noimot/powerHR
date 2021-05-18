@@ -7,12 +7,12 @@ const getAllTasks = () => async(dispatch) => {
             type: GET_TASK_REQUEST
         });
         const response = await allTasks();
-
+        console.log(response)
         if(response.status === 201) {
             dispatch({
                 type: GET_TASK_SUCCESS,
                 payload: {
-                    result: response.data
+                    result: response.data.tasks
                 }
             });
             

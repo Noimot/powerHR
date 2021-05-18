@@ -56,7 +56,7 @@ const Login = () => {
                         {/* <button onClick={handleClick}> SIGN IN</button> */}
                         <Button onClick={handleClick} buttonClick='SIGN IN' />
                         {loginStore.loginError && <p className='login'>incorrect login credentials</p>}
-                        {loginStore.loginSuccess && <p>loggin in ...</p>}
+                        {loginStore.loginSuccess && <p>logging in ...</p>}
                     </form>
 
                 </div>

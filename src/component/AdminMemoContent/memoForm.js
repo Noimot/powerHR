@@ -45,8 +45,8 @@ const MemoForm = ({ modalHandler }) => {
                         <label htmlFor='memo'>MEMO</label>
                         <input type='text' id='memo' name='memo' value='' onChange='{ddmmmm}' />
                     </section>
-                    <section>
-                        <Button buttonClick='SEND MEMO' />
+                    <section style={{margin: '1rem 0 -2rem 5rem'}}>
+                        <Button buttonClick='SEND MEMO'  cssClass='secondary-button' />
                     </section>
 
                 </form>
