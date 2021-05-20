@@ -67,7 +67,7 @@ const AddEmployeeForm = ({ modalHandler }) => {
                         <input type='text' name='employee_id' value={employeeData.employee_id} id='employee_id' placeholder='0250' onChange={handleChange} />
                     </div> */}
                     <div className='add-employee-form'>
-                        <label htmlFor='personal_email'>ENTER NEW WORK EMAIL</label>
+                        <label htmlFor='personal_email'>PERSONAL EMAIL</label>
                         <input type='text' name='personal_email' value={employeeData.personal_email} id='personal_email' placeholder='naima@gmail.com' onChange={handleChange} />
                     </div>
                     <div className='add-employee-form'>

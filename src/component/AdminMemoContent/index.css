@@ -1,7 +1,30 @@
 .memo-content {
-  margin-top: 3rem;
+  margin-top: 3.2rem;
+  width: 1095px;
 }
 
+/* .memo-container {
+    padding: 1.5rem 0 0 1.8rem;
+} */
+
+.memo-content-container hr {
+    padding: 0;
+    margin: 0;
+}
+
+.memo-spacing > * {
+    margin: 1rem 0;
+}
+
+.memo-spacing > p {
+    padding: 0.2rem 0 0 1.8rem;
+}
+
+.memo-content-container > .memo-spacing:first-child {
+    padding-top: 0.2rem;
+}
+
+/* modal css */
 .memo-container {
     width: 100%;
     height: 92%;

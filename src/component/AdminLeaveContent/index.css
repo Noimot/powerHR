@@ -2,6 +2,10 @@
     margin: 4.5rem 1.5rem 1.5rem 1.5rem;
 }
 
+.leave-container {
+    width: 66rem;
+}
+
 .leave-days {
     max-width: 800px;
     width: 100%;

@@ -48,8 +48,7 @@
 
 .button-div {
     position: relative;
-     /* bottom: 1rem; */
-    /* padding-top: 0.5rem; */
+    margin-left: 5.5rem;
 }
 
 .remove-employee-modal {

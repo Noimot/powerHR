@@ -1,5 +1,6 @@
 .employee-list-container {
     margin-top: 3rem;
+    width: 1090px;
 }
 
 .employee-location, .add-employee  {
@@ -60,7 +61,7 @@ ul {
 }
 
 .employee-info-list > * {
-    width: 8.8rem;
+    width: 5rem;
 }
 
 .employee-info-list {

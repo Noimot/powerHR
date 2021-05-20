@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import AdminSidebar from './../component/Dashboard-sidebar'
 import Navbar from './../component/Navbar'
 import './index.css'
-import  AnnouncementModal  from '../component/GeneralAnnouncement/announcement_modal'
+import AnnouncementModal from '../component/GeneralAnnouncement/announcement_modal'
 import TaskModal from '../component/AdminTaskContent/taskModal'
 import MemoModal from '../component/AdminMemoContent/memoModal'
 
@@ -33,7 +33,7 @@ const navTitle = () => {
 
 const AddNewAnnouncement = () => {
     const [open, setOpen] = useState(false)
-    
+
     const modalHandler = (state) => {
         setOpen(state)
     }
@@ -54,12 +54,12 @@ const AddNewAnnouncement = () => {
 const AddNewTask = () => {
 
     const [open, setOpen] = useState(false)
-    
+
     const modalHandler = (state) => {
         setOpen(state)
     }
     return (
-        
+
         <div className='admin-navbar' >
             <p>TASKS</p>
             <div style={{ color: '#D9D9D9', cursor: 'pointer' }} onClick={() => modalHandler(true)}>
@@ -119,18 +119,18 @@ const EmployeesList = () => {
 
 export const DashboardLayout = (props) => {
 
-       
-    
+
+
     console.log(window.location.pathname)
     return (
         <div className='admin-display-flex'>
             <div className='side-wrapper'>
-            <AdminSidebar />
+                <AdminSidebar />
             </div>
             <div className='admin-content'>
                 <Navbar content={navTitle()} />
                 <div className="layout-children">
-                {props.children}
+                    {props.children}
                 </div>
             </div>
 
