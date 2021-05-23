@@ -13,9 +13,18 @@ import PersonalDetails from '../component/PersonalDetails'
 import Profile from '../component/Profile'
 import { Salary } from '../component/Salary'
 import PageNotFound from '../component/PageNotFound'
+import EmployeeDashboard from '../component/EmployeeDashboard'
+import EmployeeTaskList from '../component/EmployeeTaskList'
+import EmployeeMemo from '../component/EmployeeMemo'
+import EmployeeLeave from '../component/EmployeeLeave'
+
 
 const Routes = () => (
     <Switch>
+        <Route exact path='/employeeleave' component={EmployeeLeave} />
+        <Route exact path='/employeememo' component={EmployeeMemo} />
+        <Route exact path='/employeetasklist' component={EmployeeTaskList} />
+        <Route exact path='/employeedashboard' component={EmployeeDashboard} />
         <Route exact path='/addemployee' component={AddEmployeeForm} />
         <Route exact path='/salary' component={Salary} />
         <Route exact path='/jobstatus' component={JobStatus} />

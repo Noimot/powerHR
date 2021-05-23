@@ -5,9 +5,32 @@ import './index.css'
 import AnnouncementModal from '../component/GeneralAnnouncement/announcement_modal'
 import TaskModal from '../component/AdminTaskContent/taskModal'
 import MemoModal from '../component/AdminMemoContent/memoModal'
+import AdminSidebarr from '../component/Dashboard-sidebar/adminSidebar'
+import EmployeeSidebar from '../component/Dashboard-sidebar/employeeSidebar'
 
 
 
+//AdminSidebarr and EmployeeSidebar are components inside DashboardSidebar, the switch is to change the dashboard route
+const dashboard = () => {
+    const dashboardRoute = window.location.pathname;
+    switch (dashboardRoute) {
+        case '/admindashboard':
+            return <AdminSidebarr />
+        case '/employeedashboard':
+            return <EmployeeSidebar />
+        case '/employeetasklist':
+            return <EmployeeSidebar />
+        case '/employeememo':
+            return <EmployeeSidebar />
+        case '/employeeleave':
+            return <EmployeeSidebar />
+        default:
+            return <AdminSidebarr />;
+    }
+}
+
+
+// the switch condition here is to change what the content of the navbar
 const navTitle = () => {
     const path = window.location.pathname;
     switch (path) {
@@ -23,6 +46,14 @@ const navTitle = () => {
             return <Profile />
         case '/employeelist':
             return <EmployeesList />
+        case '/employeedashboard':
+            return <EmployeeAllAnnouncement />
+        case '/employeetasklist':
+            return <EmployeeTaskNav />
+        case '/employeememo':
+            return <EmployeeMemoNav />
+        case '/employeeleave':
+            return <AddNewLeave />
         default:
             break;
 
@@ -30,7 +61,7 @@ const navTitle = () => {
 }
 
 
-
+//Admin navbar content
 const AddNewAnnouncement = () => {
     const [open, setOpen] = useState(false)
 
@@ -39,7 +70,7 @@ const AddNewAnnouncement = () => {
     }
     return (
         <div className='admin-navbar'>
-            <p>GENERAL ANNOUNCEMENT</p>
+            <p>GENERAL ANNOUNCEMENTS</p>
             <div style={{ color: '#D9D9D9', cursor: 'pointer' }} onClick={() => modalHandler(true)}>
                 <span>+  </span>
             New announcement
@@ -117,6 +148,37 @@ const EmployeesList = () => {
     )
 }
 
+
+//Employee Navbar content
+
+const EmployeeAllAnnouncement = () => {
+
+    return (
+        <div className='admin-navbar'>
+            <p>GENERAL ANNOUNCEMENTS</p>
+        </div>
+    )
+}
+
+const EmployeeTaskNav = () => {
+    return (
+        <div className='admin-navbar' >
+            <p>TASKS</p>
+        </div>
+    )
+}
+
+const EmployeeMemoNav = () => {
+    return (
+        <div className='admin-navbar'>
+            <p>MEMOS</p>
+        </div>
+    )
+}
+
+
+
+//powerHR page layout
 export const DashboardLayout = (props) => {
 
 
@@ -125,7 +187,7 @@ export const DashboardLayout = (props) => {
     return (
         <div className='admin-display-flex'>
             <div className='side-wrapper'>
-                <AdminSidebar />
+                <AdminSidebar dashboardContent={dashboard()} />
             </div>
             <div className='admin-content'>
                 <Navbar content={navTitle()} />

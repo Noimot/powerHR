@@ -1,0 +1,33 @@
+.profile-link {
+    display: flex;
+    justify-content: space-between;
+    background-color: #246C60;
+    color: #fff;
+    padding: 1.1rem 3rem 1.1rem 1.5rem;
+    font-size: 0.92rem;
+    min-width: 81.8%;
+    margin: -1.6rem;
+    cursor: pointer;
+    margin-bottom: 1.4rem;
+}
+
+.profile-link p {
+    margin-left: 7rem;
+    text-decoration: underline;
+}
+
+.profile-link a {
+    color: #fff;
+}
+
+.employee-date {
+    padding: 2px;
+    width: fit-content;
+    background: #F7F7F7;
+    border: 1px solid #D9D9D9;
+    box-shadow:  3px 0px 3px rgba(128, 128, 128, 0.11);
+    border-radius:5px;
+    position: relative;
+    left: 28rem;
+    
+}

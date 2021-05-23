@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import './index.css'
 import getAllTasks from '../../redux/action/tasks'
 import { useDispatch, useSelector } from 'react-redux'
+import { DashboardLayout } from '../../layout/DashboardLayout'
+import Checkbox from '@material-ui/core/Checkbox';
 
 
 const Todo = () => {
@@ -13,11 +14,20 @@ const Todo = () => {
         dispatch(getAllTasks())
     }, [dispatch])
 
+    const [checked, setChecked] = useState(true);
+
+  const handleChange = (e) => {
+    setChecked(e.target.checked);
+  }
+
     return (
         <>
-        {taskStore.getTasks.map((task) => {
-            return <div className='all-tasks' key={task.id}>{task.tasks}</div>
-        })}
+        {taskStore.getTasks.map((task) =>    
+            <div className='all-tasks' style={{display: 'flex', alignItems: 'center'}}>
+            <input key={task.id} value={JSON.stringify(task)} type='checkbox' onChange={(e)=>handleChange(e)} />
+            <div style={{marginLeft: '0.6rem'}}>{task.tasks}</div>
+            </div>
+        )}
         </>
     )
 }
@@ -29,7 +39,7 @@ const Completed = () => {
 }
 
 
-const AdminTaskContent = () => {
+export const EmployeeTaskContent = () => {
 
     const dispatch = useDispatch();
     const taskStore = useSelector(({ taskReducer }) => taskReducer)
@@ -65,4 +75,18 @@ const AdminTaskContent = () => {
     )
 }
 
-export default AdminTaskContent;
+
+// employee task list
+
+const EmployeeTaskList = () => {
+    return (
+        <DashboardLayout>
+            <EmployeeTaskContent />  
+        </DashboardLayout>
+
+
+    )
+}
+
+export default EmployeeTaskList;
+

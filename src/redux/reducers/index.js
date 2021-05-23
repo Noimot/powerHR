@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import loginReducer from './adminLogin'
-import AddEmployeeReducer from './add_new_employee'
+import allEmployeeReducer from './employee'
 import announcementReducer from './annoucement'
 import adminReducer from './adminName'
 import taskReducer from './allTask'
@@ -9,7 +9,7 @@ import memoReducer from './memoReducer'
 
 export default combineReducers({
     loginReducer,
-    AddEmployeeReducer,
+    allEmployeeReducer,
     announcement: announcementReducer,
     adminReducer,
     taskReducer,

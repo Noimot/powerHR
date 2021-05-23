@@ -1,15 +1,10 @@
 import React, { useState } from 'react'
 import Button from '../Button'
 import './index.css'
-import { useSelector, useDispatch } from 'react-redux'
-import AddNewEmployee from '../../redux/action/add_employee'
-import addEmployeeApi from '../../redux/api/add_employee'
+import addEmployeeApi from '../../redux/api/employee'
 
 
 const AddEmployeeForm = ({ modalHandler }) => {
-
-    const dispatch = useDispatch();
-    const addEmployeeStore = useSelector(({ addEmployeeReducer }) => addEmployeeReducer)
 
     const [employeeData, setEmployeeData] = useState({
         employee_name: '',
@@ -17,10 +12,6 @@ const AddEmployeeForm = ({ modalHandler }) => {
         personal_email: '',
         company_email: ''
     })
-
-    // useEffect(() => {
-
-    // }, [])
 
     const handleChange = (e) => {
         const name = e.target.name;

@@ -1,4 +1,4 @@
-import { ADD_USER_FAILURE, ADD_USER_REQUEST, ADD_USER_SUCCESS } from '../actionTypes'
+import { GET_USER_FAILURE, GET_USER_REQUEST, GET_USER_SUCCESS } from '../actionTypes'
 
 const initialState = {
     loading: false,
@@ -8,22 +8,23 @@ const initialState = {
     errorMessage: ''
 }
 
-const AddEmployeeReducer = (state=initialState, { type, payload }) => {
+const allEmployeeReducer = (state=initialState, { type, payload }) => {
     switch (type) {
-        case ADD_USER_REQUEST:
+        case GET_USER_REQUEST:
             return {
                 ...state,
                 loading: true,
                 loginError: false
             }
-        case ADD_USER_SUCCESS:
+        case GET_USER_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 loginSuccess: true,
-                loginError: false
+                loginError: false,
+                data: payload.result
             }
-        case ADD_USER_FAILURE:
+        case GET_USER_FAILURE:
             return {
                 ...state,
                 loading: false,
@@ -37,4 +38,4 @@ const AddEmployeeReducer = (state=initialState, { type, payload }) => {
     }
 }
 
-export default AddEmployeeReducer;
+export default allEmployeeReducer;

@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import './index.css'
 import Button from '../Button'
 import { Link } from 'react-router-dom'
 import img from './../Dashboard-sidebar/b.jpg'
+import { DashboardLayout } from '../../layout/DashboardLayout';
 
 
-const AdminLeaveContent = () => {
+
+const EmployeeLeaveContent = () => {
 
 
     const Pending = () => {
@@ -58,11 +59,12 @@ const AdminLeaveContent = () => {
                 </div>
                 <div>
                     <p style={{ color: '#5E5E5E' }}>Researcher, Research Department</p><br />
-                    <p style={{ color: '#D4293D', marginLeft: 'auto' }}>Denied</p>
+                    <p style={{ color: '#D4293D', marginRight: 'auto' }}>Denied</p>
                 </div>
             </div>
         )
     }
+
 
     const [tab, setTab] = useState(0)
 
@@ -84,7 +86,7 @@ const AdminLeaveContent = () => {
     return (
         <section className='leave-content'>
             <div className='leave-container'>
-                {/* <div className='leave-days'>
+                <div className='leave-days'>
                 <div>
                     <p>Number of off days allowed</p>
                     <h3 style={{ color: '#152D54' }}>46 days</h3>
@@ -99,7 +101,7 @@ const AdminLeaveContent = () => {
                 </div>
             </div>
 
-            <Button buttonClick='REQUEST FOR DAYS OFF' cssClass='secondary-button' /> */}
+            <Button buttonClick='REQUEST FOR DAYS OFF' cssClass='secondary-button' />
 
                 <div className='leave-request'>
                     <p style={{ color: '#2C4770' }}>Pending requests</p>
@@ -113,18 +115,6 @@ const AdminLeaveContent = () => {
                         <p onClick={() => setTab(2)}>Denied</p>
                     </div>
 
-                    {/* <div className='leave-status-info'>
-                        <div className='leave-info'>
-                            <img src={img} alt='admin' />
-                            <div className='leave-date'>
-                                <p style={{ color: '#3D3D3D' }}>Samantha Adeleke</p> <br />
-                                <p style={{ color: '#2C4770' }}><span style={{ color: '#3D3D3D' }}>Date:</span>12 June 2021 - 22 June 2021</p>
-                            </div>
-                        </div>
-                        <div>
-                            <p style={{ color: '#5E5E5E' }}>Researcher, Research Department</p><br />
-                            <p style={{ color: '#D4293D', marginLeft: '8rem' }}>Deny &nbsp; &nbsp;<span style={{ color: '#246C60' }}>Approve</span></p>
-                        </div> */}
                     {handleSwitch()}
                 </section>
 
@@ -135,4 +125,14 @@ const AdminLeaveContent = () => {
     )
 }
 
-export default AdminLeaveContent;
+
+
+const EmployeeLeave = () => {
+    return (
+        <DashboardLayout>
+            <EmployeeLeaveContent />
+        </DashboardLayout>
+    )
+}
+
+export default EmployeeLeave;

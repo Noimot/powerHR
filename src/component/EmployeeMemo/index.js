@@ -2,16 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import memoAction from '../../redux/action/memoAction'
 import Admin from '../../redux/action/adminName'
-import MemoContentModal from './memoContentModal'
+import MemoContentModal from '../AdminMemoContent/memoContentModal'
+import { DashboardLayout } from '../../layout/DashboardLayout'
 
 
 
-const MemoContent = () => {
 
-    const [singleMemo, setSingleMemo] = useState({
-
-    });
-
+const EmployeeMemoContent = () => {
 
     const dispatch = useDispatch();
     const memoStore = useSelector(({ memoReducer }) => memoReducer)
@@ -62,4 +59,14 @@ const MemoContent = () => {
     )
 }
 
-export default MemoContent;
+
+
+const EmployeeMemo = () => {
+    return (
+        <DashboardLayout>
+            <EmployeeMemoContent />
+        </DashboardLayout>
+    )
+}
+
+export default EmployeeMemo;
