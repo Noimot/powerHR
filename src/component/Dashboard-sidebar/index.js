@@ -18,7 +18,7 @@ export default function Index({dashboardContent}) {
 
     return (
         
-        <div>
+        <div style={{height: '100%'}}>
             {dashboardContent}
         </div>
 

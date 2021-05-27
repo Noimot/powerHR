@@ -51,7 +51,7 @@ export default function EmployeeSidebar() {
                             <MenuItem><Link to='/employeememo'>Memos</Link></MenuItem>
                             <MenuItem><Link to='/employeeleave'>Paid leave</Link></MenuItem>
                         </SubMenu>
-                       <SubMenu title={<Link to='/profile'>Profile</Link>} icon={<img src={svgProfile} alt='profile icon' />}>
+                       <SubMenu title={<Link to='/employeeprofile'>Profile</Link>} icon={<img src={svgProfile} alt='profile icon' />}>
                             <MenuItem><a href='#personal-details'>Personal details</a></MenuItem>
                             <MenuItem><a href='#contact-details'>Contact details</a></MenuItem>
                             <MenuItem><a href='#'>Work hours</a></MenuItem>

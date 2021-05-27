@@ -1,8 +1,12 @@
 .admin-data-container {
+    margin: 2rem 1.5rem 1.5rem 1.5rem;
+}
+
+.profile-image {
     margin: 4rem 1.5rem 1.5rem 1.5rem;
 }
 
-.admin-data-container > p {
+.admin-data-container > p, .personal-details-container > p {
     padding: 0 0 0.5rem 1.5rem;
     font-weight: bolder;
     color: #4D658D;

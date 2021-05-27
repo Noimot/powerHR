@@ -33,8 +33,8 @@
     align-items: center;
 }
 
-.memo-modal-container {
-  max-width: 430px;
+.memo-modal-container, .request-form-container {
+  max-width: 400px;
   width: 100%;
   background-color: #FFF;
   border: 0.5px solid #5e5e5e;
@@ -43,8 +43,9 @@
   
 }
 
-.memo-modal-container > form, .memo-header {
-    padding: 1rem 1.5rem;
+.memo-modal-container > form, .memo-header, .request-form-container > form,
+.leave-status-modal {
+    padding: 1rem 1.5rem 0.2rem 1.5rem;
 
 }
 
@@ -57,6 +58,8 @@
     display: flex;
     background-color: #2C4770;
     justify-content: space-between;
+    color: #fff;
+
 }
 
 .form-addressed-to, .memo-input {
@@ -95,12 +98,12 @@ form input {
     outline: 0;
 }
 
-form > section:nth-child(2) > input{
+.memo-modal-container > form > section:nth-child(2) > input {
     background: #F7F7F7;
     padding-top: 1.5rem;
 }
 
-form > section:nth-child(3) > input{
+.memo-modal-container > form > section:nth-child(3) > input{
     background: #F7F7F7;
     padding-top: 4rem;
 }

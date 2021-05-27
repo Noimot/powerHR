@@ -4,11 +4,10 @@ import PersonalDetailsComponent from '../PersonalDetailsComponent'
 import ContactDetailsComponent from '../ContactDetailsComponent'
 import JobStatusComponent from '../JobStatusComponent'
 import { SalaryComponent } from '../Salary'
-import './index.css'
 import { Avatar } from '@material-ui/core'
 
 
-const Profile = () => {
+const EmployeeProfile = () => {
     return (
         <DashboardLayout>
             <div className='profile-container'>
@@ -25,4 +24,4 @@ const Profile = () => {
     )
 }
 
-export default Profile;
+export default EmployeeProfile;

@@ -8,6 +8,7 @@ export const LoginData = (data) => async(dispatch) => {
             type: LOGIN_USER_REQUEST,
         });
         const response = await loginApi(data);
+       
         if (response.status === 200){
             dispatch({
                 type: LOGIN_USER_SUCCESS,
@@ -15,6 +16,8 @@ export const LoginData = (data) => async(dispatch) => {
                     result: response.data
                 },
             })
+            const token = localStorage.setItem('x-access-token', response.data.token)
+            console.log(response.data.token)
         }
         else {
             dispatch({

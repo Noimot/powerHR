@@ -12,19 +12,25 @@ const ListOfEmployees = () => {
     const dispatch = useDispatch();
     const employeeDataStore = useSelector(({ allEmployeeReducer }) => allEmployeeReducer)
 
-    const [employeeStore, setEmployeeStore] = useState(employeeDataStore.data ? employeeDataStore.data : [])
+    const [employeeStore, setEmployeeStore] = useState([])
 
-
-    const getDepartment = (department) => {
-        return employeeStore.filter(dataStore => dataStore.department.toLowerCase() === department.toLowerCase())
-    }
+console.log(employeeDataStore.data)
+    // const getDepartment = (department) => {
+    //     console.log(department)
+    //     console.log(employeeStore)
+            
+    //     return employeeStore.filter(dataStore => dataStore.department.toLowerCase() === department.toLowerCase())
+    // }
     const getLocation = (location) => {
         return employeeStore.filter(dataStore => dataStore.location.toLowerCase() === location.toLowerCase())
     }
 
-    const getName = (name) => {
-        return employeeStore.filter(dataStore => dataStore.employee_name.toLowerCase() === name.toLowerCase())
-    }
+    // const getName = (name) => {
+    //     return employeeStore.filter(dataStore => dataStore.employee_name.toLowerCase() === name.toLowerCase())
+    // }
+
+
+
 
     useEffect(() => {
         dispatch(allEmployee())
@@ -48,76 +54,41 @@ const ListOfEmployees = () => {
     })
 
 
+    // const handleChange = (e) => {
+    //     const name = e.target.name;
+    //     const value = e.target.value;
+    //     setSearchInput({ ...searchInput, [name]: value })
+    //     setEmployeeStore(employeeDataStore.data)
+    // }
+
+
+
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
         setSearchInput({ ...searchInput, [name]: value })
-        setEmployeeStore(employeeDataStore.data)
+        const filteredEmployeeList = employeeDataStore.data.filter( (list) => list?.department?.toLowerCase().includes(value.toLowerCase()))
+        console.log({filteredEmployeeList})
+        setEmployeeStore(filteredEmployeeList)
     }
 
-    // const getAllEmployeeData = () => {
-    //     switch (getDepartment) {
-    //         case getDepartment:
-    //             return <GetAllDepartment />
-    //         case getLocation:
-    //             return <GetAllLocation />
-    //         case getName:
-    //             return <GetAllName />
-    //         default:
-    //             return <GetAllDepartment />
-    //     }
-    // }
 
-    // const GetAllDepartment = () => {
-    //     return (
-    //         <>
-    //             const departmentValue = getDepartment(searchInput.department.trim())
-    //             setEmployeeStore([...departmentValue])
-    //         </>
-    //     )
-
-    // }
-
-    // const GetAllLocation = () => {
-    //     return (
-    //         <>
-    //             const locationValue = getLocation(searchInput.location.trim())
-    //             setEmployeeStore([...locationValue])
-    //         </>
-    //     )
-
-    // }
-
-
-    // const GetAllName = () => {
-    //     return (
-    //         <div>
-    //            { setEmployeeStore([...getName(searchInput.employeeName.trim())])}
-    //         </div>
-    //     )
-
-    // }
-
-    // const handleKeypress = (e) => {
-    //     if (e.key === 'Enter') {
-    //         getAllEmployeeData()
-    //     }
-    // }
-
+   
 
     const handleKeypress = (e) => {
-    if (e.key === 'Enter') {
-        const departmentValue = getDepartment(searchInput.department.trim())
-        setEmployeeStore([...departmentValue])
-    }
-    if (e.key === 'Enter') {
-        const locationValue = getLocation(searchInput.location.trim())
-        setEmployeeStore([...locationValue])
-    }
-    if (e.key === 'Enter') {
-        const nameValue = getName(searchInput.employeeName.trim())
-        setEmployeeStore([...nameValue])
-    }
+    // if (e.key === 'Enter') {
+    // if (!searchInput.department.trim()) return
+    //     const departmentValue = getDepartment(searchInput.department.trim())
+    //     setEmployeeStore([...departmentValue])
+    // }
+    // if (e.key === 'Enter') {
+    //     const locationValue = getLocation(searchInput.location.trim())
+    //     setEmployeeStore([...locationValue])
+    // }
+    // if (e.key === 'Enter') {
+    //     const nameValue = getName(searchInput.employeeName.trim())
+    //     setEmployeeStore([...nameValue])
+    // }
     }
 
 
@@ -130,7 +101,7 @@ const ListOfEmployees = () => {
                     <p>FILTERED BY:</p>
                     <div className='input-flex'>
                         <label htmlFor='department'>Department</label>
-                        <input type='text' name='department' id='department' value={searchInput.department} onChange={handleChange} onKeyPress={(e) => handleKeypress(e)} />
+                        <input type='text' name='department' id='department' value={searchInput.department} onChange={handleChange} />
                     </div>
                     <div className='input-flex'>
                         <label htmlFor='location'>Location</label>
@@ -154,7 +125,8 @@ const ListOfEmployees = () => {
 
             <EmployeeModal open={open} modalHandler={modalHandler} />
 
-            <BasicTable employeeDataStore={employeeStore} />
+
+            <BasicTable employeeDataStore={employeeStore.length > 0? employeeStore: employeeDataStore.data} />
         </section>
     )
 }

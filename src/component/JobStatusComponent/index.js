@@ -60,7 +60,7 @@ const JobStatusComponent = () => {
                               name="checkedA"
                             />
                           }
-                          label="Verve"
+                          label="Active"
                         />
                         <FormControlLabel
                           control={
@@ -70,17 +70,7 @@ const JobStatusComponent = () => {
                               name="checkedA"
                             />
                           }
-                          label="Master Card"
-                        />
-                        <FormControlLabel
-                          control={
-                            <Checkbox
-                              // checked={state.checkedA}
-                              // onChange={handleChange}
-                              name="checkedA"
-                            />
-                          }
-                          label="Visa Card"
+                          label="Dismissed"
                         />
                       </FormGroup>
                         

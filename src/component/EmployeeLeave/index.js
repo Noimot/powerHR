@@ -3,10 +3,18 @@ import Button from '../Button'
 import { Link } from 'react-router-dom'
 import img from './../Dashboard-sidebar/b.jpg'
 import { DashboardLayout } from '../../layout/DashboardLayout';
+import LeaveRequestModal from './leaveRequestModal'
+
 
 
 
 const EmployeeLeaveContent = () => {
+
+    const [open , setOpen ] = useState(false)
+
+    const modalHandler = (state) => {
+        setOpen(state)
+    }
 
 
     const Pending = () => {
@@ -101,7 +109,7 @@ const EmployeeLeaveContent = () => {
                 </div>
             </div>
 
-            <Button buttonClick='REQUEST FOR DAYS OFF' cssClass='secondary-button' />
+            <Button buttonClick='REQUEST FOR DAYS OFF' cssClass='secondary-button' onClick={() => modalHandler(true)}/>
 
                 <div className='leave-request'>
                     <p style={{ color: '#2C4770' }}>Pending requests</p>
@@ -120,6 +128,8 @@ const EmployeeLeaveContent = () => {
 
 
             </div>
+
+            <LeaveRequestModal open={open} modalHandler={modalHandler} />
         </section >
 
     )

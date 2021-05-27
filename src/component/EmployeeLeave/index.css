@@ -1,0 +1,39 @@
+/* some of the css are from memo-form css  */
+
+.leave-request-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.leave-request {
+    display: flex;
+}
+
+.request-form-container {
+    font-size: 15px;
+}
+
+.request-form-container > form > section:nth-child(1) > input {
+    background: #F7F7F7;
+    padding-top: 1.5rem;
+}
+
+.request-form-container > form > section:nth-child(3) > input {
+    background: #F7F7F7;
+    padding-top: 5.5rem;
+}
+
+.leave-request label {
+    border: 0.5px solid #5E5E5E;
+    background: #F7F7F7;
+    border-radius: 4px;
+    padding: 0.6rem 1.4rem;
+}
+
+.request-form-container > form section {
+    margin-top: 1.5rem;
+}
+
+.request-form-container > form > section:nth-child(1) {
+    margin-top: -0.02rem
+}

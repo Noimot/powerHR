@@ -58,8 +58,8 @@ export default function BasicTable({ employeeDataStore }) {
         <TableBody>
           {employeeDataStore?.map((employeeData) => (
             <TableRow key={employeeData.employee_name}>
-              <TableCell component="th" scope="row" style={{display:'flex'}}>
-              <div className='img-employee-list'><img src={img} alt='employee' /></div>{employeeData.employee_name}
+              <TableCell component="th" scope="row" style={{display:'flex', alignItems: 'center'}}>
+              <div className='img-employee-list'><img src={img} alt='employee' /></div> &nbsp; &nbsp; {employeeData.employee_name}
               </TableCell>
               <TableCell align="center">{employeeData.id}</TableCell>
               <TableCell align="center">{employeeData.department}</TableCell>

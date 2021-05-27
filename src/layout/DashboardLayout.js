@@ -24,6 +24,8 @@ const dashboard = () => {
             return <EmployeeSidebar />
         case '/employeeleave':
             return <EmployeeSidebar />
+        case '/employeeprofile':
+            return <EmployeeSidebar />
         default:
             return <AdminSidebarr />;
     }
@@ -54,6 +56,8 @@ const navTitle = () => {
             return <EmployeeMemoNav />
         case '/employeeleave':
             return <AddNewLeave />
+        case '/employeeprofile':
+            return <Profile />
         default:
             break;
 
