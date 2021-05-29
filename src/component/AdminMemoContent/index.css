@@ -108,3 +108,9 @@ form input {
     padding-top: 4rem;
 }
 
+/* second memo modal */
+
+div.memo-content-modal {
+    padding: 1.5rem 1.5rem 4rem 1.5rem;
+}
+

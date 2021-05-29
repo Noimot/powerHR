@@ -5,10 +5,12 @@ export default function TaskForm({ modalHandler }) {
     const [task, setTask] = useState('')
 
     const handleClick = async (data) => {
-        const response = await addTask({ tasks: task })
-        console.log(response)
-        if(response.data.statusCode === 201){
-            modalHandler(false)
+        if (task) {
+            const response = await addTask({ tasks: task })
+            console.log(response)
+            if (response.data.statusCode === 201) {
+                modalHandler(false)
+            }
         }
     }
 

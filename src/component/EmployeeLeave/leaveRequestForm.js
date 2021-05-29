@@ -37,7 +37,7 @@ const LeaveRequestForm = ({ modalHandler }) => {
                         <label htmlFor='reason'>REASON (OPTIONAL) </label>
                         <input type='text' id='reason' name='reason' value={employeeData.reason} onChange={handleChange} />
                     </section>
-                    <section style={{ margin: '1rem 0 -3rem 2rem' }}>
+                    <section style={{ margin: '1rem 0 -1rem 2rem' }}>
                         <Button buttonClick='REQUEST FOR DAYS OFF' cssClass='secondary-button' onClick='{handleClick}' />
                     </section>
 

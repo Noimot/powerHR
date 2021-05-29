@@ -2,18 +2,28 @@ import React, { useEffect } from 'react'
 import './index.css'
 import allAnnouncement from '../../redux/action/announcement.js'
 import { useDispatch, useSelector } from 'react-redux'
+import spinner from './spinner.gif'
 
 
 const DashboardContent = () => {
-    
-const dispatch = useDispatch();
-const announcementStore = useSelector(({announcement}) => announcement)
+
+    const dispatch = useDispatch();
+    const announcementStore = useSelector(({ announcement }) => announcement)
     // const current = Date().toString()
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(allAnnouncement())
-    },[dispatch])
+    }, [dispatch])
 
     console.log(announcementStore.allAnnouncement)
+    console.log(announcementStore)
+
+    // const emptyStore = () => {
+    //     {
+    //         if (announcementStore.allAnnouncement === []) {
+    //             return <p>announcement store is empty</p>
+    //         }
+    //     }
+    // }
 
     const current = new Date()
 
@@ -50,13 +60,17 @@ const announcementStore = useSelector(({announcement}) => announcement)
         <div className='admin-right-sidebar'>
             <p className='date'>{date}</p>
             <hr />
-                {announcementStore.allAnnouncement.map((eachAnnouncement) => {
-                    return <div key={eachAnnouncement.id}>{eachAnnouncement.announcements}
-                    <p className='p-time'>{eachAnnouncement.date_posted}</p>
+            {announcementStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}
+
+           {/* {emptyStore} */}
+
+            {announcementStore.allAnnouncement.map((eachAnnouncement) => {
+                return <div key={eachAnnouncement.id}>{eachAnnouncement.announcements}
+                    <p className='p-time'>{eachAnnouncement.date_posted.split('.')[0]}</p>
                     <hr />
-                    </div>   
-                })
-                }
+                </div>
+            })
+            }
 
         </div>
     )

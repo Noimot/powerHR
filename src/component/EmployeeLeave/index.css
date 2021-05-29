@@ -21,6 +21,7 @@
 .request-form-container > form > section:nth-child(3) > input {
     background: #F7F7F7;
     padding-top: 5.5rem;
+    border-radius: 0.5px solid #5E5E5E;
 }
 
 .leave-request label {

@@ -53,10 +53,9 @@ const Login = () => {
                         <input type='text' name='id' value={loginInfo.id} onChange={handleChange} placeholder='ID NUMBER OR WORK EMAIL*' />
                         <input type='password' name='password' value={loginInfo.password} onChange={handleChange} placeholder='PASSWORD' />
                         <span className='password'>Forgot password?</span>
-                        {/* <button onClick={handleClick}> SIGN IN</button> */}
                         <Button onClick={handleClick} buttonClick='SIGN IN' />
-                        {loginStore.loginError && <p className='login'>incorrect login credentials</p>}
-                        {loginStore.loginSuccess && <p>logging in ...</p>}
+                        {loginStore.loginError && <p className='loginError'>incorrect login credentials</p>}
+                        {loginStore.loginSuccess && <p className='login'>logging in ...</p>}
                     </form>
 
                 </div>

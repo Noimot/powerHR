@@ -10,7 +10,7 @@
 .add-announcement-form form {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 58px;
 }
 
 .add-announcement-form input {
@@ -29,6 +29,7 @@
 
 .add-announcement-div p {
     margin-left: 2rem;
+    font-weight: 400;
 }
 
 .add-announcement-div p:last-child {

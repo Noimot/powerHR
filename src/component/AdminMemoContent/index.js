@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import memoAction from '../../redux/action/memoAction'
 import Admin from '../../redux/action/adminName'
 import MemoContentModal from './memoContentModal'
-// import MemoModalContent from './memoContent'
-
-
+// import DirectionSnackbar from './notification'
+import spinner from '../Dashboard-right-sidebar/spinner.gif'
 
 const MemoContent = () => {
 
@@ -16,10 +15,10 @@ const MemoContent = () => {
 
     const dispatch = useDispatch();
     const memoStore = useSelector(({ memoReducer }) => memoReducer)
-    // console.log(memoStore)
+    console.log(memoStore)
 
     const [memoState, setMemoState] = useState(memoStore)
-    console.log(memoState)
+    // console.log(memoState)
 
     const adminStore = useSelector(({ adminReducer }) => adminReducer)
     const adminName = adminStore.data.name
@@ -31,36 +30,14 @@ const MemoContent = () => {
 
     useEffect(() => {
         setMemoState(memoStore)
-        console.log(memoStore)
+        // console.log(memoStore)
     }, [memoStore])
 
     useEffect(() => {
         dispatch(Admin())
     }, [dispatch])
 
-
-    // const [open, setOpen] = useState({
-    //     state: false,
-    //     From: '',
-    //     To: '',
-    //     Date: '',
-    //     Subject: '',
-    //     Memo: ''
-    // })
-
-
     const [open, setOpen] = useState(false)
-
-    // const modalHandler = (memoItem) => {
-    //     setOpen({
-    //         state: true,
-    //         From: { adminName },
-    //         To: 'employee',
-    //         Date: memoItem.date,
-    //         Subject: memoItem.subject,
-    //         memo: memoItem.memos
-    //     })
-    // }
 
 
     const modalHandler = (state) => {
@@ -74,18 +51,21 @@ const MemoContent = () => {
             <div className='memo-content' style={{ cursor: 'pointer' }}>
                 <div className='memo-content-container' >
 
-                    {memoState.allMemo.map((memoList) => {
-                        return <div key={memoList.id} className='memo-spacing' onClick={() =>{
-                             modalHandler(true)
-                         setSingleMemo(memoList)
-                         }}>
+                {memoStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}
 
-                            {/* return <div key={memoList.id} className='memo-spacing' onClick={() => modalHandler(memoList)}> */}
+                    {memoState.allMemo.map((memoList) => {
+                        return <div key={memoList.id} className='memo-spacing' onClick={() => {
+                            modalHandler(true)
+                            setSingleMemo(memoList)
+                        }}>
+                            <p style={{color: '#D4293D', fontWeight:'bold'}}>CLICK TO VIEW MEMO</p>
+                            {/* <DirectionSnackbar /> */}
                             <p>From: {adminName} </p>
                             <p>To:employee</p>
                             <p>Date: {memoList.date}</p>
                             <p>Subject: {memoList.subject}</p>
                             <hr />
+
                         </div>
                     })}
 

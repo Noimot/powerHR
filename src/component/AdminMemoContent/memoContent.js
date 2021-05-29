@@ -23,7 +23,7 @@ const MemoModalContent = ({ modalHandler, memo }) => {
                     <p style={{ cursor: 'pointer' }} onClick={() => modalHandler(false)}>x</p>
                 </div>
 
-                <div className='memo-content-container' >
+                <div className='memo-content-modal'>
 
                     <div key={memo.id}>
                         <p>From: {adminName} </p>
@@ -34,14 +34,13 @@ const MemoModalContent = ({ modalHandler, memo }) => {
                             <p>MEMO</p>
                             <p>{memo.memos}</p>
                         </div>
-                        <hr />
                     </div>
 
                 </div>
 
 
-                <section style={{ margin: '1rem 0 -2rem 5rem' }}>
-                    <Button buttonClick='CLOSE' cssClass='secondary-button' />
+                <section style={{cursor: 'pointer'}}>
+                    <Button buttonClick='CLOSE' cssClass='neutral-button' onClick={() => modalHandler(false)} />
                 </section>
             </div>
         </section>

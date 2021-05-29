@@ -16,7 +16,7 @@ const AdminLeaveContent = () => {
 
     const Pending = () => {
         return (
-            <div className='leave-status-info'>
+            <div className='leave-status-info' onClick={() => modalHandler(true)}>
                 <div className='leave-info'>
                     <img src={img} alt='admin' />
                     <div className='leave-date'>
@@ -89,7 +89,7 @@ const AdminLeaveContent = () => {
 
     return (
         <section className='leave-content'>
-            <div className='leave-container'  onClick={() => modalHandler(true)}>
+            <div className='leave-container'>
 
                 <div className='leave-request'>
                     <p style={{ color: '#2C4770' }}>Pending requests</p>

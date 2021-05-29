@@ -21,8 +21,9 @@ const memoReducer = (state = initialState, { type, payload }) => {
         case GET_USER_SUCCESS:
             return {
                 ...state,
-                loginError: true,
-                allMemo: payload.result
+                loginError: false,
+                allMemo: payload.result,
+                loading: false,
             }
 
         case GET_USER_FAILURE:

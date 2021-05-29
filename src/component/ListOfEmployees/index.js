@@ -14,7 +14,7 @@ const ListOfEmployees = () => {
 
     const [employeeStore, setEmployeeStore] = useState([])
 
-console.log(employeeDataStore.data)
+console.log(employeeDataStore)
     // const getDepartment = (department) => {
     //     console.log(department)
     //     console.log(employeeStore)
@@ -37,8 +37,8 @@ console.log(employeeDataStore.data)
     }, [dispatch])
 
     useEffect(() => {
-        setEmployeeStore(employeeDataStore.data)
-    }, [employeeDataStore.data])
+        setEmployeeStore(employeeDataStore)
+    }, [employeeDataStore])
 
 
     const [open, setOpen] = useState(false);
@@ -70,6 +70,7 @@ console.log(employeeDataStore.data)
         const filteredEmployeeList = employeeDataStore.data.filter( (list) => list?.department?.toLowerCase().includes(value.toLowerCase()))
         console.log({filteredEmployeeList})
         setEmployeeStore(filteredEmployeeList)
+        // setEmployeeStore(employeeDataStore.data)
     }
 
 
@@ -126,7 +127,7 @@ console.log(employeeDataStore.data)
             <EmployeeModal open={open} modalHandler={modalHandler} />
 
 
-            <BasicTable employeeDataStore={employeeStore.length > 0? employeeStore: employeeDataStore.data} />
+            <BasicTable employeeDataStore={employeeStore.length > 0? employeeStore: employeeDataStore} />
         </section>
     )
 }

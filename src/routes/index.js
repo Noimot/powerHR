@@ -18,12 +18,10 @@ import EmployeeTaskList from '../component/EmployeeTaskList'
 import EmployeeMemo from '../component/EmployeeMemo'
 import EmployeeLeave from '../component/EmployeeLeave'
 import EmployeeProfile from '../component/EmployeeProfile'
-import LeaveRequestForm from '../component/EmployeeLeave/leaveRequestForm'
 
 
 const Routes = () => (
     <Switch>
-        <Route exact path='/leaverequestform' component={LeaveRequestForm} />
         <Route exact path='/employeeprofile' component={EmployeeProfile} />
         <Route exact path='/employeeleave' component={EmployeeLeave} />
         <Route exact path='/employeememo' component={EmployeeMemo} />

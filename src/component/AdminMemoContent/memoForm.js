@@ -70,7 +70,7 @@ const MemoForm = ({ modalHandler }) => {
                         <label htmlFor='memo'>MEMO</label>
                         <input type='text' id='memo' name='memo' value={addMemo.memo} onChange={handleChange} />
                     </section>
-                    <section style={{ margin: '1rem 0 -2rem 5rem' }}>
+                    <section style={{ margin: '1rem 0 0.2rem 4.2rem' }}>
                         <Button buttonClick='SEND MEMO' cssClass='secondary-button' onClick={handleClick} />
                     </section>
 

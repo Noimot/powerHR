@@ -100,3 +100,7 @@
     margin-right: 1rem;
     color:  #D4293D;
 }
+
+.leave-status-modal div:last-child > p:last-child {
+    color: #246C60;
+}
