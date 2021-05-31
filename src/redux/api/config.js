@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const userToken = () => {
-    const token = localStorage.getItem('accessToken')
+    const token = localStorage.getItem('x-access-token')
     if (token) {
         return token;
     }

@@ -35,12 +35,16 @@ const Login = () => {
 
     const handleClick = (e) => {
         e.preventDefault()
-        console.log(loginInfo.id, loginInfo.password)
+        if (loginInfo.id.trim() !== '' || loginInfo.password.trim() !== ''){
+            console.log(loginInfo.id, loginInfo.password)
 
-        dispatch(LoginData({
-            adminId: loginInfo.id,
-            password: loginInfo.password       
-        }))
+            dispatch(LoginData({
+                adminId: loginInfo.id,
+                password: loginInfo.password       
+            }))
+        
+        }
+        
     }
 
     return (
@@ -54,6 +58,7 @@ const Login = () => {
                         <input type='password' name='password' value={loginInfo.password} onChange={handleChange} placeholder='PASSWORD' />
                         <span className='password'>Forgot password?</span>
                         <Button onClick={handleClick} buttonClick='SIGN IN' />
+                        {loginStore.loading && <p className='login'>loading ...</p>}
                         {loginStore.loginError && <p className='loginError'>incorrect login credentials</p>}
                         {loginStore.loginSuccess && <p className='login'>logging in ...</p>}
                     </form>

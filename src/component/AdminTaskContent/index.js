@@ -17,7 +17,7 @@ const Todo = () => {
     return (
         <>
             {taskStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}
-            {taskStore.getTasks.map((task) => {
+            {taskStore.getTasks.length > 0 && taskStore.getTasks.map((task) => {
                 return <div className='all-tasks' key={task.id}>{task.tasks}</div>
             })}
         </>

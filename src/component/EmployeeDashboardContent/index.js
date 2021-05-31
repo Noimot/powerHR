@@ -3,9 +3,12 @@ import './index.css'
 import allAnnouncement from '../../redux/action/announcement.js'
 import { useDispatch, useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
+import spinner from '../Dashboard-right-sidebar/spinner.gif'
 
 
 const EmployeeDashboardContent = () => {
+
+    const [ state, setState] = useState(false)
     
 const dispatch = useDispatch();
 const announcementStore = useSelector(({announcement}) => announcement)
@@ -51,11 +54,12 @@ const announcementStore = useSelector(({announcement}) => announcement)
         <div className='admin-right-sidebar'>
             
             <div className='profile-link'>
-                <p><Link to='/profile'> Complete your profile setup by filling in your personal details, contact details and other necessary fields.</Link></p><span>x</span>
+                <p><Link to='/profile'> Complete your profile setup by filling in your personal details, contact details and other necessary fields.</Link></p><span on>x</span>
             </div>
 
             <p className='employee-date'>{date}</p>
             <hr />
+            {announcementStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}
                 {announcementStore.allAnnouncement.map((eachAnnouncement) => {
                     return <div key={eachAnnouncement.id}>{eachAnnouncement.announcements}
                     <p className='p-time'>{eachAnnouncement.date_posted}</p>

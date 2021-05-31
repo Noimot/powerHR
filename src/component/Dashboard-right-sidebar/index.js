@@ -60,13 +60,13 @@ const DashboardContent = () => {
         <div className='admin-right-sidebar'>
             <p className='date'>{date}</p>
             <hr />
-            {announcementStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}
+            {announcementStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' /></div>}
 
            {/* {emptyStore} */}
 
-            {announcementStore.allAnnouncement.map((eachAnnouncement) => {
+            {announcementStore.allAnnouncement.length > 0 && announcementStore.allAnnouncement.map((eachAnnouncement) => {
                 return <div key={eachAnnouncement.id}>{eachAnnouncement.announcements}
-                    <p className='p-time'>{eachAnnouncement.date_posted.split('.')[0]}</p>
+                    <p className='p-time'>{eachAnnouncement.date_posted}</p>
                     <hr />
                 </div>
             })

@@ -53,7 +53,7 @@ const MemoContent = () => {
 
                 {memoStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}
 
-                    {memoState.allMemo.map((memoList) => {
+                    {memoState.allMemo.length > 0 && memoState.allMemo.map((memoList) => {
                         return <div key={memoList.id} className='memo-spacing' onClick={() => {
                             modalHandler(true)
                             setSingleMemo(memoList)

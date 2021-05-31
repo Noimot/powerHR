@@ -3,7 +3,7 @@ import getAllTasks from '../../redux/action/tasks'
 import { useDispatch, useSelector } from 'react-redux'
 import { DashboardLayout } from '../../layout/DashboardLayout'
 import Checkbox from '@material-ui/core/Checkbox';
-
+import spinner from '../Dashboard-right-sidebar/spinner.gif'
 
 const Todo = () => {
 
@@ -16,18 +16,19 @@ const Todo = () => {
 
     const [checked, setChecked] = useState(true);
 
-  const handleChange = (e) => {
-    setChecked(e.target.checked);
-  }
+    const handleChange = (e) => {
+        setChecked(e.target.checked);
+    }
 
     return (
         <>
-        {taskStore.getTasks.map((task) =>    
-            <div className='all-tasks' style={{display: 'flex', alignItems: 'center'}}>
-            <input key={task.id} value={JSON.stringify(task)} type='checkbox' onChange={(e)=>handleChange(e)} />
-            <div style={{marginLeft: '0.6rem'}}>{task.tasks}</div>
-            </div>
-        )}
+            {taskStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}
+            {taskStore.getTasks.map((task) =>
+                <div className='all-tasks' style={{ display: 'flex', alignItems: 'center' }}>
+                    <input key={task.id} value={JSON.stringify(task)} type='checkbox' onChange={(e) => handleChange(e)} />
+                    <div style={{ marginLeft: '0.6rem' }}>{task.tasks}</div>
+                </div>
+            )}
         </>
     )
 }
@@ -57,16 +58,16 @@ export const EmployeeTaskContent = () => {
         }
     }
 
-    
+
 
 
     return (
         <section className='task-content-container'>
-            <div className='todo-flex' style={{ cursor:'pointer'}}>
-               <div className={tab === 0 ? 'p-border' : null}> <p onClick={() => setTab(0) }>To-do</p></div>
-               <div className={tab === 1 ? 'p-border' : null}><p onClick={() => setTab(1) }>Completed</p></div>
+            <div className='todo-flex' style={{ cursor: 'pointer' }}>
+                <div className={tab === 0 ? 'p-border' : null}> <p onClick={() => setTab(0)}>To-do</p></div>
+                <div className={tab === 1 ? 'p-border' : null}><p onClick={() => setTab(1)}>Completed</p></div>
             </div>
-            <hr /> 
+            <hr />
 
             { handleDisplay()}
 
@@ -81,7 +82,7 @@ export const EmployeeTaskContent = () => {
 const EmployeeTaskList = () => {
     return (
         <DashboardLayout>
-            <EmployeeTaskContent />  
+            <EmployeeTaskContent />
         </DashboardLayout>
 
 

@@ -40,7 +40,7 @@ export default function BasicTable({ employeeDataStore }) {
         </TableHead>
         <TableBody>
         {employeeDataStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}
-          {employeeDataStore.data?.map((employeeData) => (
+          {employeeDataStore.data.length > 0 && employeeDataStore.data?.map((employeeData) => (
             <TableRow key={employeeData.employee_name}>
               <TableCell component="th" scope="row" style={{display:'flex', alignItems: 'center'}}>
               <div className='img-employee-list'><img src={img} alt='employee' /></div> &nbsp; &nbsp; {employeeData.employee_name}
