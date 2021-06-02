@@ -6,8 +6,8 @@ const AnnouncementForm = ({ modalHandler }) => {
 
     const [formValue, setFormValue] = useState('')
 
-    const handleClick = async () => {
-        if (formValue) {
+    const handleClick = async (data) => {
+        if (formValue.trim() !== '') {
             const response = await announcementApi({ announcements: formValue })
 
             console.log(response)

@@ -3,6 +3,7 @@ import './index.css'
 import getAllTasks from '../../redux/action/tasks'
 import { useDispatch, useSelector } from 'react-redux'
 import spinner from '../Dashboard-right-sidebar/spinner.gif'
+import NestedList from './employeesName'
 
 
 const Todo = () => {
@@ -16,6 +17,7 @@ const Todo = () => {
 
     return (
         <>
+        <NestedList />
             {taskStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}
             {taskStore.getTasks.length > 0 && taskStore.getTasks.map((task) => {
                 return <div className='all-tasks' key={task.id}>{task.tasks}</div>

@@ -6,9 +6,9 @@
   justify-content: space-evenly;
 }
 
-.todo-flex > p {
-  color: #2c4770;
-  margin-top: 1rem;
+.todo-flex  p {
+  color: hsl(213, 5%, 37%);
+margin-bottom: -0.1rem;
 }
 
 .p-border {
@@ -25,4 +25,11 @@
 
 .all-tasks {
   padding: 2rem 2rem 0;
+}
+
+.select-option-value {
+  outline: 0;
+  border: none;
+  background: #D9D9D9;
+  color: #3D3D3D;
 }
