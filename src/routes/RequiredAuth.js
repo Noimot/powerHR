@@ -1,18 +1,6 @@
-// import React from "react";
-// import { Redirect } from "react-router-dom";
-
-
-// function RequiredAuth({ component }) {
-//   if (!localStorage.getItem("x-access-token")) {
-//     return <Redirect to="/" />;
-//   }
-//   return <component />;
-// }
-// export default RequiredAuth;
-
 import React from "react";
 import {Redirect, Route } from "react-router-dom";
-import { userToken } from '../redux/api/config';
+
 
 /**
  * Renders the component if the user is authenticated
@@ -32,10 +20,10 @@ const renderComponent = (Component) => (props) => {
  * @returns {JSX}
  */
 
-export const isAuthenticated = () => {
-  const token = userToken(); 
-  return !!token;
-};
+// export const isAuthenticated = () => {
+//   const token = userToken(); 
+//   return !!token;
+// };
 
 const AuthorizedRoute = (props) => {
     return (
@@ -45,11 +33,11 @@ const AuthorizedRoute = (props) => {
 
 const AuthenticatedRoute = (props) => {
   const {component: Component, ...rest} = props;
-  const checkisAuthenticated = isAuthenticated();
-  const token = userToken();
-//   const user = decodeToken(token);
+  // const checkisAuthenticated = isAuthenticated();
+  // const token = userToken();
+  // const user = jwt(token);
 
-  if (!checkisAuthenticated) {
+  if (!props.authRoute) {
     return <Redirect to="/" />;
   }
 

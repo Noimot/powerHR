@@ -9,3 +9,8 @@ export const allTasks = async() => {
     const request = await api.get('/tasks/all')
     return request;
 }
+
+export const taskStatusApi = async(data) => {
+    const request = await api.put('/tasks/update', data)
+    return request;
+}

@@ -5,6 +5,10 @@ import announcementReducer from './annoucement'
 import adminReducer from './adminName'
 import taskReducer from './allTask'
 import memoReducer from './memoReducer'
+import updateTaskStatusReducer from './updateTask'
+import leaveRequestReducer from './leaveRequestReducer'
+import pendingLeaveReducer from './pendingLeave'
+import leaveStatusReducer from './leaveStatusReducer'
 
 
 export default combineReducers({
@@ -13,5 +17,9 @@ export default combineReducers({
     announcement: announcementReducer,
     adminReducer,
     taskReducer,
-    memoReducer
+    memoReducer,
+    updateTaskStatusReducer,
+    leaveRequestReducer,
+    pendingLeaveReducer,
+    leaveStatusReducer,
 })

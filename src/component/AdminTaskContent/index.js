@@ -19,24 +19,42 @@ const Todo = () => {
         <>
         <NestedList />
             {taskStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}
-            {taskStore.getTasks.length > 0 && taskStore.getTasks.map((task) => {
+            {taskStore.getTasks.filter((filteredTask) => filteredTask.iscompleted === false)
+            .map((task) => {
                 return <div className='all-tasks' key={task.id}>{task.tasks}</div>
             })}
         </>
     )
 }
 
+
 const Completed = () => {
+    
+         const dispatch = useDispatch();
+    const taskStore = useSelector(({ taskReducer }) => taskReducer)
+
+
+    useEffect(() => {
+        dispatch(getAllTasks())
+    }, [])
+
     return (
-        <div>Completed</div>
+        <>
+        {taskStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}
+        {taskStore.getTasks.filter((filteredTask) => filteredTask.iscompleted === true)
+        .map((task) =>
+            <div className='all-tasks' style={{ display: 'flex', alignItems: 'center' }}>
+                <div style={{ marginLeft: '0.6rem' }}>{task.tasks}</div>
+            </div>
+        )}
+    </>
+    
     )
 }
 
 
 const AdminTaskContent = () => {
 
-    const dispatch = useDispatch();
-    const taskStore = useSelector(({ taskReducer }) => taskReducer)
 
     const [tab, setTab] = useState(0)
 
@@ -70,3 +88,5 @@ const AdminTaskContent = () => {
 }
 
 export default AdminTaskContent;
+
+

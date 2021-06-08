@@ -4,10 +4,10 @@ import LeaveRequestForm from './leaveRequestForm'
 
 
 
-const LeaveRequestModal = ({open , modalHandler}) => {
+const LeaveRequestModal = ({ open, modalHandler }) => {
     return (
-        <Modal open={open} onClose={() => console.log('this is a modal')}> 
-<LeaveRequestForm modalHandler={modalHandler} />
+        <Modal open={open} onClose={() => console.log('this is a modal')}>
+            <LeaveRequestForm modalHandler={modalHandler} />
         </Modal>
     )
 }

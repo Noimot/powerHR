@@ -16,15 +16,17 @@
 .request-form-container > form > section:nth-child(1) > input {
     background: #F7F7F7;
     padding-top: 1.5rem;
+    margin-top: 0.4rem;
 }
 
 .request-form-container > form > section:nth-child(3) > input {
     background: #F7F7F7;
     padding-top: 5.5rem;
     border-radius: 0.5px solid #5E5E5E;
+    margin-top: 0.4rem;
 }
 
-.leave-request label {
+.leave-request label{
     border: 0.5px solid #5E5E5E;
     background: #F7F7F7;
     border-radius: 4px;
@@ -38,3 +40,19 @@
 .request-form-container > form > section:nth-child(1) {
     margin-top: -0.02rem
 }
+
+.request-form-container > form > section:nth-child(2) > .leave-request-input > input {
+    background: #F7F7F7;
+border: 0.5px solid #5E5E5E;
+border-radius: 4px;
+margin-top: 0.3rem;
+padding: 0.3rem 0.2rem;
+}
+
+.request-form-container > form > section:nth-child(2) > .leave-request-input > label {
+    border: 0;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+}
+

@@ -5,10 +5,10 @@ import Button from '../Button'
 import { LoginData } from '../../redux/action/loginData'
 import { useSelector, useDispatch } from 'react-redux'
 
-// import styles from './style.module.css'
 
 const Login = () => {
 
+   
     const dispatch = useDispatch();
     const loginStore = useSelector(({ loginReducer }) => loginReducer)
 
@@ -21,12 +21,6 @@ const Login = () => {
         document.body.className = 'body-background';
     }, []);
 
-    useEffect(() => {
-        if (loginStore.loginSuccess){
-            window.location.href = '/admindashboard'
-        }
-    })
-
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -35,20 +29,20 @@ const Login = () => {
 
     const handleClick = (e) => {
         e.preventDefault()
-        if (loginInfo.id.trim() !== '' || loginInfo.password.trim() !== ''){
+        if (loginInfo.id.trim() !== '' || loginInfo.password.trim() !== '') {
             console.log(loginInfo.id, loginInfo.password)
 
             dispatch(LoginData({
                 adminId: loginInfo.id,
-                password: loginInfo.password       
+                password: loginInfo.password
             }))
-        
+
         }
-        
+
     }
 
     return (
-        <div className='body-background'>
+        <div className='body-background'>h
             <section className='login-form'>
                 <div className='login-width'>
                     <div> <img src={logo} alt='power HR logo' /></div>

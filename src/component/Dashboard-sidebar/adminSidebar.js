@@ -23,6 +23,11 @@ export default function AdminSidebar() {
       dispatch(Admin())
     },[dispatch])
 
+    const handleClick = () => {
+       const del = localStorage.removeItem("x-access-token")
+       console.log(del)
+    }
+
     return (
         <>
 
@@ -60,7 +65,7 @@ export default function AdminSidebar() {
                             <MenuItem><a href='#'>Social media accounts</a></MenuItem>
                         </SubMenu>
                         <MenuItem icon={<img src={svgList} alt='employees list icon' />}><Link to='/employeelist'>Employees list</Link></MenuItem>
-                        <MenuItem icon={<img src={svgLogout} alt='logout icon' />}><Link to='/'>Sign out</Link></MenuItem>
+                        <MenuItem icon={<img src={svgLogout} alt='logout icon' />} onClick={handleClick}><Link to='/'>Sign out</Link></MenuItem>
 
 
                     </Menu>

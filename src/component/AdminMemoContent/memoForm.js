@@ -3,6 +3,7 @@ import { Checkbox, FormGroup, FormControlLabel } from '@material-ui/core';
 import Button from '../Button'
 import './index.css'
 import { memoApi } from '../../redux/api/memoApi'
+// import DepartmentList from './departmentList'
 
 
 
@@ -58,6 +59,7 @@ const MemoForm = ({ modalHandler }) => {
                                 <select>
                                     <option>send to dept</option>
                                 </select>
+                                {/* <DepartmentList /> */}
                             </div>
                         </div>
                         <input type='text' id='addressed-to' name='addressedTo' value={addMemo.addressedTo} onChange={handleChange} />

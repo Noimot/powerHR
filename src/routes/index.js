@@ -19,7 +19,24 @@ import EmployeeMemo from '../component/EmployeeMemo'
 import EmployeeLeave from '../component/EmployeeLeave'
 import EmployeeProfile from '../component/EmployeeProfile'
 import AuthenticatedRoute from './RequiredAuth.js'
+import { userToken } from '../redux/api/config';
+import jwt from 'jwt-decode'
 
+
+
+ const isAuthenticated = () => {
+    const token = userToken(); 
+    return !!token;
+  };
+
+  const restrictedRoute = () => {
+    const token = userToken(); 
+    const getToken = jwt(token)
+    console.log(getToken)
+    return  getToken.role === 'admin' 
+
+    
+  }
 
 const Routes = () => (
     <Switch>
@@ -27,7 +44,7 @@ const Routes = () => (
         <Route exact path='/employeeleave' component={EmployeeLeave} />
         <Route exact path='/employeememo' component={EmployeeMemo} />
         <Route exact path='/employeetasklist' component={EmployeeTaskList} />
-        <AuthenticatedRoute exact path='/employeedashboard' component={EmployeeDashboard} />
+        <AuthenticatedRoute exact path='/employeedashboard' component={EmployeeDashboard} authRoute={isAuthenticated()} />
         <Route exact path='/addemployee' component={AddEmployeeForm} />
         <Route exact path='/salary' component={Salary} />
         <Route exact path='/jobstatus' component={JobStatus} />
@@ -38,7 +55,7 @@ const Routes = () => (
         <Route exact path='/adminleave' component={AdminLeave} />
         <Route exact path='/adminmemo' component={AdminMemo} />
         <Route exact path='/admintask' component={AdminTask} />
-        <AuthenticatedRoute exact path='/admindashboard' component={AdminDashboard} />
+        <AuthenticatedRoute exact path='/admindashboard' component={AdminDashboard} authRoute={isAuthenticated() && restrictedRoute()} />
         <Route exact path='/' component={Login} />
         <Route exact path='*' component={PageNotFound} />
     </Switch>

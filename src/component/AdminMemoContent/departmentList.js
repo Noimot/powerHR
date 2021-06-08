@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import allEmployee from '../../redux/action/employee'
-import { MentionsInput, Mention } from 'react-mentions'
 
 
-export default function NestedList() {
+export default function DepartmentList() {
 
     const [optionValue, setOptionValue] = useState('')
 
@@ -28,12 +27,10 @@ export default function NestedList() {
         <div>
             <select value={optionValue} onChange={handleChange} className='select-option-value'>
                 {employeeDataStore.data.map(store => {
-                    return <option value={store.userid}>{store.employee_name}</option>
+                    return <option value={store.userid}>{store.department}</option>
                 })}
             </select>
         </div>
-
-        
 
     )
 }

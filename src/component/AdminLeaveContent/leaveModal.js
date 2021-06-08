@@ -3,13 +3,13 @@ import { Modal } from '@material-ui/core'
 import LeaveForm from './leaveForm'
 
 
-const LeaveModal = ({ open, modalHandler }) => {
+const LeaveModal = ({ leave, open, modalHandler }) => {
     const closeModal = () => {
         modalHandler(false)
     }
     return (
         <Modal open={open} onClick={() => console.log('this is a modal')}>
-            <LeaveForm modalHandler={closeModal} />
+            <LeaveForm leave={leave} modalHandler={closeModal} />
         </Modal>
     )
 }

@@ -1,19 +1,28 @@
 import React from 'react'
 import DashboardContent from '../Dashboard-right-sidebar'
 import { DashboardLayout } from './../../layout/DashboardLayout'
-// import { Redirect } from "react-router-dom";
+// import jwt from 'jwt-decode'
 
 
 
-// function RequireAuth({ AdminDashboard }) {
-//   if (!localStorage.getItem("x-access-token")) {
-//     return <Redirect to="/" />;
-//   }
-//   return <AdminDashboard />;
-// }
-// export default RequireAuth;
 
 export const AdminDashboard = () => {
+
+    // const token = localStorage.getItem('x-access-token')
+    // const user = jwt(token)
+    // console.log(user)
+    // console.log(user.role)
+
+
+    // useEffect(() => {
+    //     if (user.role === 'admin') {
+    //         window.location.assign('/admindashboard')
+    //     }
+    //     else if (user.role === 'employee') {
+    //         window.location.assign('/employeedashboard')
+    //     }
+    // })
+
     return (
        <DashboardLayout>
             <DashboardContent />

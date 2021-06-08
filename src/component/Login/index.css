@@ -58,4 +58,71 @@ p.loginError {
     margin-top: 1.3rem;
 }
 
+@media (max-width: 479px){
+    .login-width input {
+        width: 21rem;
+        padding: 2.3rem 1rem 0.2rem 0.5rem;  
+    }
+    .login-form > .login-width {
+        padding: 30px;
+    }
 
+    section.login-form {
+        max-width: 400px;
+        
+    }
+}
+
+
+@media (max-width: 400px){
+    .login-width input {
+        width: 18rem;
+        padding: 2.1rem 1rem 0.2rem 0.5rem;  
+    }
+    .login-form > .login-width {
+        padding: 25px;
+    }
+
+    section.login-form {
+        max-width: 350px;
+        
+    }
+}
+
+@media (max-width: 320px){
+    .login-width input {
+        width: 17rem;
+        padding: 2.1rem 1rem 0.2rem 0.5rem;  
+    }
+    .login-form > .login-width {
+        padding: 22px;
+    }
+
+    section.login-form {
+        max-width: 350px;
+        
+    }
+}
+
+
+
+@media (max-width: 280px){
+    .login-width input {
+        width: 13.5rem;
+        padding: 1.8rem 0.5rem 0.2rem 0.5rem;  
+    }
+    .login-form > .login-width {
+        padding: 15px;
+    }
+
+    section.login-form {
+        max-width: 250px;
+        margin: 5rem 1rem;
+        
+    }
+    span.password {
+        float: right;
+        margin: 0.4rem 0.2rem 0 0;
+       
+    }
+}

@@ -8,7 +8,6 @@ import spinner from '../Dashboard-right-sidebar/spinner.gif'
 
 const EmployeeDashboardContent = () => {
 
-    const [ state, setState] = useState(false)
     
 const dispatch = useDispatch();
 const announcementStore = useSelector(({announcement}) => announcement)
@@ -49,14 +48,22 @@ const announcementStore = useSelector(({announcement}) => announcement)
     const date = `${weekday[current.getDay()]}, ${current.getDate()} ${month[current.getMonth() + 1]}`;
     const time = current.getHours() + ':' + current.getMinutes();
     // const date = current;
+
+const [open, setOpen] = useState(true);
+
+const handleClick = () => {
+    setOpen(false)
+    console.log(open)
+}
+
     return (
 
         <div className='admin-right-sidebar'>
-            
+            {open &&
             <div className='profile-link'>
-                <p><Link to='/profile'> Complete your profile setup by filling in your personal details, contact details and other necessary fields.</Link></p><span on>x</span>
+                <p><Link to='/employeeprofile'> Complete your profile setup by filling in your personal details, contact details and other necessary fields.</Link></p><span onClick={handleClick}>x</span>
             </div>
-
+}
             <p className='employee-date'>{date}</p>
             <hr />
             {announcementStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}

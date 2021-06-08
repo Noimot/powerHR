@@ -57,3 +57,39 @@
         left: 5rem;
         top: -2rem;
 }
+
+
+@media (max-width: 479px) {
+    .primary-button {
+        position: relative;
+        left: 2.9rem;
+        top: 2rem
+    }
+}
+
+@media (max-width: 400px) {
+    .primary-button {
+        position: relative;
+        left: 2rem;
+        top: 2rem
+    }
+}
+
+@media (max-width: 320px) {
+    .primary-button {
+        /* padding: 10px 40px; */
+        position: relative;
+        left: 1.3rem;
+        top: 0.7rem;
+    }
+}
+
+
+@media (max-width: 280px) {
+    .primary-button {
+        padding: 10px 40px;
+        position: relative;
+        left: 2.5rem;
+        top: 2rem
+    }
+}

@@ -41,7 +41,7 @@
 .leave-status {
     display: flex;
     justify-content: space-around;
-    padding: 0.5rem ;
+    padding: 0.5rem 0.5rem 0.1rem 0.5rem;
 }
 
 .leave-status-info{
@@ -79,8 +79,8 @@
 .leave-status-modal div:nth-child(4) > p{
     height: 4.3rem;
     width: 22rem;    
-    background-color: yellow;
-    margin: 0.3rem 0
+    margin: 0.3rem 0;
+    margin-top: 0.5rem;
 }
 
 .leave-status-modal hr {
@@ -88,7 +88,8 @@
 }
 
 .leave-status-modal >* {
-    margin: 0.7rem 0
+    margin: 1.2rem 0;
+    font-size: 0.9rem;
 }
 
 .leave-status-modal div:last-child {
@@ -104,3 +105,16 @@
 .leave-status-modal div:last-child > p:last-child {
     color: #246C60;
 }
+
+.border-bottom {
+    border-bottom: 2px solid #2c4770;
+  padding: 0 38px;
+}
+
+
+
+/* @media (max-width:1200px){
+.leave-container {
+    width: 35rem;
+}
+} */

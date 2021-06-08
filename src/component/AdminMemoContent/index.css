@@ -59,7 +59,7 @@
     background-color: #2C4770;
     justify-content: space-between;
     color: #fff;
-
+    padding-bottom: 1rem;
 }
 
 .form-addressed-to, .memo-input {
@@ -112,5 +112,13 @@ form input {
 
 div.memo-content-modal {
     padding: 1.5rem 1.5rem 4rem 1.5rem;
+}
+
+.memo-content-modal > div > p {
+    padding-bottom: 1.5rem;
+}
+
+.memo-content-modal > div > div > p {
+    padding-bottom: 0.5rem;
 }
 

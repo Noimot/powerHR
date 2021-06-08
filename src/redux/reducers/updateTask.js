@@ -1,34 +1,32 @@
-import { GET_USER_REQUEST, GET_USER_FAILURE, GET_USER_SUCCESS } from '../actionTypes'
+import { GET_TASK_REQUEST, GET_TASK_FAILURE, GET_TASK_SUCCESS } from '../actionTypes'
 
 const initialState = {
     loading: false,
     loginError: false,
-    getTasks: [],
+    loginSuccess: false,
     errorMessage: '',
-    loginSuccess: false
 }
 
-const taskReducer = (state = initialState, { type, payload }) => {
+const updateTaskStatusReducer = (state = initialState, { type, payload }) => {
     switch (type) {
-        case GET_USER_REQUEST:
+        case GET_TASK_REQUEST:
             return {
                 ...state,
                 loading: true,
                 loginError: false,
-                getTasks: [],
-                errorMessage: '',
-                loginSuccess: false
+                loginSuccess: false,
+                errorMessage: ''
             }
-        case GET_USER_SUCCESS:
+        case GET_TASK_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                loginError: false,
-                errorMessage: '',
                 loginSuccess: true,
-                getTasks: payload.result
+                loginError: false,
+                errorMessage: ''
             }
-        case GET_USER_FAILURE:
+
+        case GET_TASK_FAILURE:
             return {
                 ...state,
                 loading: false,
@@ -37,8 +35,9 @@ const taskReducer = (state = initialState, { type, payload }) => {
                 errorMessage: payload.error
             }
         default:
-            return state
+            return state;
     }
+
 }
 
-export default taskReducer;
+export default updateTaskStatusReducer;

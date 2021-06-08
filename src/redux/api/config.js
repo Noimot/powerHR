@@ -17,7 +17,7 @@ instance.interceptors.request.use(
         const token = userToken();
 
         if (token){
-            config.headers['x-access-token'] = token;
+            config.headers["x-access-token"] = token;
         }
         return config;
     },

@@ -5,23 +5,29 @@ import './index.css'
 import './styles.css'
 // import 'react-pro-sidebar/dist/css/styles.css';
 import svg from './images/dashboard-icon.svg'
-import svgList from './images/list-icon.svg'
+// import svgList from './images/list-icon.svg'
 import svgLogout from './images/logout-box-line.svg'
 import svgProfile from './images/profile-icon.svg'
 import { Link } from 'react-router-dom'
-import Admin  from '../../redux/action/adminName'
-import { useDispatch , useSelector } from 'react-redux';
+import jwt from 'jwt-decode'
 
 
 export default function EmployeeSidebar() {
 
-    const dispatch = useDispatch();
-    const adminStore = useSelector(({adminReducer}) => adminReducer)
-    const adminName = adminStore.data.name
-    
-    useEffect(() => {
-      dispatch(Admin())
-    },[dispatch])
+    const token = localStorage.getItem('x-access-token')
+    console.log(token)
+    const decodeToken = jwt(token)
+    console.log(decodeToken.employee_name)
+
+
+
+
+   const handleClick = () => {
+       const del = localStorage.removeItem("x-access-token")
+       console.log(del)
+    }
+
+
 
     return (
         <>
@@ -34,7 +40,7 @@ export default function EmployeeSidebar() {
                         </Avatar>
                         <p className='header-tag'>Welcome,</p>
                         
-                        <p className='admin-name'>'employee sidebar'</p>
+                        <p className='admin-name'>{decodeToken.employee_name}</p>
                     </div>
                     {/**
      *  You can add a header for the sidebar ex: logo
@@ -59,7 +65,7 @@ export default function EmployeeSidebar() {
                             <MenuItem><a href='#'>Documents</a></MenuItem>
                             <MenuItem><a href='#'>Social media accounts</a></MenuItem>
                         </SubMenu>
-                        <MenuItem icon={<img src={svgLogout} alt='logout icon' />}><Link to='/'>Sign out</Link></MenuItem>
+                        <MenuItem icon={<img src={svgLogout} alt='logout icon' />} onClick={handleClick}><Link to='/'>Sign out</Link></MenuItem>
 
 
                     </Menu>
