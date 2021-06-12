@@ -20,10 +20,6 @@ const renderComponent = (Component) => (props) => {
  * @returns {JSX}
  */
 
-// export const isAuthenticated = () => {
-//   const token = userToken(); 
-//   return !!token;
-// };
 
 const AuthorizedRoute = (props) => {
     return (
@@ -33,9 +29,7 @@ const AuthorizedRoute = (props) => {
 
 const AuthenticatedRoute = (props) => {
   const {component: Component, ...rest} = props;
-  // const checkisAuthenticated = isAuthenticated();
-  // const token = userToken();
-  // const user = jwt(token);
+
 
   if (!props.authRoute) {
     return <Redirect to="/" />;

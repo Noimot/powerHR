@@ -9,6 +9,7 @@ import updateTaskStatusReducer from './updateTask'
 import leaveRequestReducer from './leaveRequestReducer'
 import pendingLeaveReducer from './pendingLeave'
 import leaveStatusReducer from './leaveStatusReducer'
+import employeeLeaveStatusReducer from './employeeLeaveStatus'
 
 
 export default combineReducers({
@@ -22,4 +23,5 @@ export default combineReducers({
     leaveRequestReducer,
     pendingLeaveReducer,
     leaveStatusReducer,
+    employeeLeaveStatusReducer,
 })

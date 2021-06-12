@@ -55,6 +55,7 @@ const Completed = () => {
     useEffect(() => {
         dispatch(getAllTasks())
     }, [])
+    
     return (
         <>
         {taskStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}

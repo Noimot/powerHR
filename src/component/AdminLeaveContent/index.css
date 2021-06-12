@@ -3,7 +3,7 @@
 }
 
 .leave-container {
-    width: 66rem;
+    width: 63.4rem;
 }
 
 .leave-days {
@@ -41,7 +41,7 @@
 .leave-status {
     display: flex;
     justify-content: space-around;
-    padding: 0.5rem 0.5rem 0.1rem 0.5rem;
+    padding: 0.5rem 0.5rem 0.08rem 0.5rem;
 }
 
 .leave-status-info{
@@ -108,7 +108,7 @@
 
 .border-bottom {
     border-bottom: 2px solid #2c4770;
-  padding: 0 38px;
+  padding: 4px 38px 0;
 }
 
 

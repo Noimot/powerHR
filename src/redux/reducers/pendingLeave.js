@@ -13,18 +13,26 @@ const pendingLeaveReducer = (state = initialState, { type, payload }) => {
         case GET_USER_REQUEST:
         return {
             ...state,
-            loading: false
+            loading: true,
+            loginSuccess: false,
+            loginError: false,
+            errorMessage:'',
         }
         case GET_USER_SUCCESS:
         return {
             ...state,
             loginSuccess: true,
+            loginError: false,
+            loading:false,
+            errorMessage:'',
             leave: payload.result
         }
         case GET_USER_FAILURE:
         return {
             ...state,
             loginError: true,
+            loading: false,
+            loginSuccess: false,
             errorMessage: payload.error
         }
         default:

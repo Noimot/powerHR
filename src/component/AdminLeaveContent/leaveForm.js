@@ -33,8 +33,8 @@ const LeaveForm = ({ leave, modalHandler }) => {
                 </div>
                 <section className='leave-status-modal'>
                     <div>FROM: <span>{leave.name}</span></div>
-                    <div>FROM: <span>{leave.start_date}</span></div>
-                    <div>TO: <span>{leave.end_date}</span></div>
+                    <div>FROM: <span>{leave.start_date.split('T')[0]}</span></div>
+                    <div>TO: <span>{leave.end_date.split('T')[0]}</span></div>
                     <div>
                         <label>REASON</label>
                         <p>{leave.reason}</p>

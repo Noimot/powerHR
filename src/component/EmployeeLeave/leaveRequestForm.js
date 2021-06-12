@@ -12,7 +12,7 @@ const LeaveRequestForm = ({ modalHandler }) => {
     console.log(leaveRequestStore)
 
     const [employeeData, setEmployeeData] = useState({
-        employeeName: '',
+        // employeeName: '',
         date_from: '',
         date_to: '',
         reason: ''
@@ -25,11 +25,11 @@ const LeaveRequestForm = ({ modalHandler }) => {
     }
 
     const handleClick = (e) => {
-        console.log(employeeData.date_to, employeeData.date_from)
+        // console.log(employeeData.date_to, employeeData.date_from)
         e.preventDefault()
-        if (employeeData.employeeName.toLowerCase().trim() !== '' || employeeData.reason.toLowerCase().trim() !== '') {
+        if (employeeData.reason.toLowerCase().trim() !== '') {
             dispatch(leaveRequestAction({
-                name: employeeData.employeeName,
+                // name: employeeData.employeeName,
                 start_date: employeeData.date_from,
                 end_date: employeeData.date_to,
                 reason: employeeData.reason
@@ -53,8 +53,8 @@ const LeaveRequestForm = ({ modalHandler }) => {
 
                 <form>
                     <section className='leave-request-input'>
-                        <label htmlFor='name'>NAME</label>
-                        <input type='text' id='name' name='employeeName' value={employeeData.employeeName} onChange={handleChange} />
+                        {/* <label htmlFor='name'>NAME</label> */}
+                        {/* <input type='text' id='name' name='employeeName' value={employeeData.employeeName} onChange={handleChange} /> */}
                     </section>
                     <section className='leave-request'>
                         <div className='leave-request-input'>
@@ -73,7 +73,7 @@ const LeaveRequestForm = ({ modalHandler }) => {
                     <section style={{ margin: '1rem 0 -1rem 2rem' }}>
                         <Button buttonClick='REQUEST FOR DAYS OFF' cssClass='secondary-button' onClick={handleClick} />
                     </section>
-                    {leaveRequestStore.loginError && <p style={{color: 'red', fontSize: '0.8rem'}}>Employee name is incorrect</p>}
+                    {/* {leaveRequestStore.loginError && <p style={{color: 'red', fontSize: '0.8rem'}}>Employee name is incorrect</p>} */}
 
                 </form>
 

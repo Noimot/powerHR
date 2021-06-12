@@ -14,3 +14,8 @@ export const leaveStatusApi = async(data) => {
     const request = await api.put('/leave/update', data)
     return request;
 }
+
+export const employeeLeaveStatusApi = async() => {
+    const request = await api.get('/leave/userid')
+    return request;
+}
