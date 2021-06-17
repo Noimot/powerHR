@@ -59,7 +59,8 @@ const navTitle = () => {
         case '/employeeprofile':
             return <Profile />
         default:
-            break;
+            return <Profile />
+            ;
 
     }
 }

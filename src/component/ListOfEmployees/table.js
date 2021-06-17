@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -10,6 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import img from './../Dashboard-sidebar/b.jpg'
 import './index.css'
 import spinner from '../Dashboard-right-sidebar/spinner.gif'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
   table: {
@@ -24,7 +25,9 @@ function createData(name, id, department, location, phone, email) {
 export default function BasicTable({ employeeDataStore }) {
 
   const classes = useStyles();
-
+  const [data,setData] = useState([...employeeDataStore])
+// console.log(employeeDataStore)
+useEffect(()=>{setData(employeeDataStore)},[employeeDataStore])
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
@@ -39,9 +42,9 @@ export default function BasicTable({ employeeDataStore }) {
           </TableRow>
         </TableHead>
         <TableBody>
-        {employeeDataStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}
-          {employeeDataStore.data.length > 0 && employeeDataStore.data?.map((employeeData) => (
-            <TableRow key={employeeData.employee_name}>
+        {/* {data.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>} */}
+          {data.length > 0 && data?.map((employeeData,index) => (
+            <TableRow key={index}>
               <TableCell component="th" scope="row" style={{display:'flex', alignItems: 'center'}}>
               <div className='img-employee-list'><img src={img} alt='employee' /></div> &nbsp; &nbsp; {employeeData.employee_name}
               </TableCell>
@@ -50,6 +53,7 @@ export default function BasicTable({ employeeDataStore }) {
               <TableCell align="center">{employeeData.location}</TableCell>
               <TableCell align="center">{employeeData.phone}</TableCell>
               <TableCell align="center">{employeeData.company_email}</TableCell>
+              <TableCell align="center"><Link to={`/profile/${employeeData.userid}`}>view</Link></TableCell>
             </TableRow>
           ))}
         </TableBody>

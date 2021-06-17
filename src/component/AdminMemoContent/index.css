@@ -8,45 +8,46 @@
 } */
 
 .memo-content-container hr {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .memo-spacing > * {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
 .memo-spacing > p {
-    padding: 0.2rem 0 0 1.8rem;
+  padding: 0.2rem 0 0 1.8rem;
 }
 
 .memo-content-container > .memo-spacing:first-child {
-    padding-top: 0.2rem;
+  padding-top: 0.2rem;
 }
 
 /* modal css */
 .memo-container {
-    width: 100%;
-    height: 92%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 92%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.memo-modal-container, .request-form-container {
+.memo-modal-container,
+.request-form-container {
   max-width: 400px;
   width: 100%;
-  background-color: #FFF;
+  background-color: #fff;
   border: 0.5px solid #5e5e5e;
   box-shadow: 0px 3px 8px rgba(51, 51, 51, 0.15);
   border-radius: 4px;
-  
 }
 
-.memo-modal-container > form, .memo-header, .request-form-container > form,
+.memo-modal-container > form,
+.memo-header,
+.request-form-container > form,
 .leave-status-modal {
-    padding: 1rem 1.5rem 0.2rem 1.5rem;
-
+  padding: 1rem 1.5rem 0.2rem 1.5rem;
 }
 
 .memo-modal-container > form {
@@ -55,70 +56,84 @@
 }
 
 .memo-header {
-    display: flex;
-    background-color: #2C4770;
-    justify-content: space-between;
-    color: #fff;
-    padding-bottom: 1rem;
+  display: flex;
+  background-color: #2c4770;
+  justify-content: space-between;
+  color: #fff;
+  padding-bottom: 1rem;
 }
 
-.form-addressed-to, .memo-input {
-    display: flex;
-    flex-direction: column;
+.form-addressed-to,
+.memo-input {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-addressed-to > div:first-child {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .form-addressed-to .checkbox-flex {
-    display: flex;
-    color: #246C60;
+  display: flex;
+  color: #246c60;
 }
 
-.checkbox-flex > select {
+/* .checkbox-flex > select {
     border: none;
     outline: 0;
     color: #246C60;
-}
+} */
 
 .memo-input {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .form-addressed-to > input {
-    margin-top: 0.7rem;
+  margin-top: 0.7rem;
 }
 
 form input {
-    border: none;
-    border-bottom: 0.5px solid #5E5E5E;
-    outline: 0;
+  border: none;
+  border-bottom: 0.5px solid #5e5e5e;
+  outline: 0;
 }
 
-.memo-modal-container > form > section:nth-child(2) > input {
-    background: #F7F7F7;
-    padding-top: 1.5rem;
+.memo-modal-container > form > section:nth-child(3) > input {
+  background: #f7f7f7;
+  padding-top: 1.5rem;
 }
 
-.memo-modal-container > form > section:nth-child(3) > input{
-    background: #F7F7F7;
-    padding-top: 4rem;
+.memo-modal-container > form > section:nth-child(4) > input {
+  background: #f7f7f7;
+  padding-top: 4rem;
 }
 
 /* second memo modal */
 
 div.memo-content-modal {
-    padding: 1.5rem 1.5rem 4rem 1.5rem;
+  padding: 1.5rem 1.5rem 4rem 1.5rem;
 }
 
 .memo-content-modal > div > p {
-    padding-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .memo-content-modal > div > div > p {
-    padding-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
+.font-color {
+  color: #5e5e5e;
+}
+
+.memo-spacing:hover {
+  background: #f7f7f7;
+}
+
+.memo-content-span {
+  background: rgba(77, 101, 141, 0.2);
+  border: 0.5px solid #d9d9d9;
+  border-radius: 4px;
+}

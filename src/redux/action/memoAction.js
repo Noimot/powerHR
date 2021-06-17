@@ -1,16 +1,16 @@
 import { getAllMemoApi } from '../api/memoApi'
-import { GET_USER_REQUEST, GET_USER_FAILURE, GET_USER_SUCCESS } from '../actionTypes'
+import { GET_MEMO_REQUEST, GET_MEMO_FAILURE, GET_MEMO_SUCCESS } from '../actionTypes'
 
 const memoAction = () => async (dispatch) => {
     try {
         dispatch({
-            type: GET_USER_REQUEST
+            type: GET_MEMO_REQUEST
         });
 
         const response = await getAllMemoApi();
         if (response.status === 201) {
             dispatch({
-                type: GET_USER_SUCCESS,
+                type: GET_MEMO_SUCCESS,
                 payload: {
                     result: response.data.memos
                 }
@@ -18,7 +18,7 @@ const memoAction = () => async (dispatch) => {
         }
         else {
             dispatch({
-                type: GET_USER_FAILURE,
+                type: GET_MEMO_FAILURE,
                 payload: {
                     error: 'failed to connect to database'
                 }
@@ -27,7 +27,7 @@ const memoAction = () => async (dispatch) => {
     }
     catch {
         dispatch({
-            type: GET_USER_FAILURE,
+            type: GET_MEMO_FAILURE,
             payload: {
                 error: 'something went wrong!'
             }

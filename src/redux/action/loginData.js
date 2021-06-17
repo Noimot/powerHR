@@ -22,7 +22,6 @@ export const LoginData = (data) => async (dispatch) => {
             type: LOGIN_USER_REQUEST,
         });
         const response = await loginApi(data);
-
         if (response.status === 200) {
             dispatch({
                 type: LOGIN_USER_SUCCESS,

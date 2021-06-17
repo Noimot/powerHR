@@ -6,7 +6,7 @@
     margin: 4rem 1.5rem 1.5rem 1.5rem;
 }
 
-.admin-data-container > p, .personal-details-container > p {
+.personal-details-div > p, .personal-details-container > p {
     padding: 0 0 0.5rem 1.5rem;
     font-weight: bolder;
     color: #4D658D;
@@ -20,8 +20,12 @@
     padding: 1.5rem;
 }
 
-.flex-display {
+.flex-display, .personal-details-div {
     display: flex;
+}
+
+.personal-details-div {
+    justify-content: space-between;
 }
 
 .flex-display:not(:first-child) {
@@ -42,3 +46,8 @@
     color: #3D3D3D;
     font-size: 1.5rem;
 } */
+
+.set-input-value > input {
+    border: none;
+    outline: 0;
+}

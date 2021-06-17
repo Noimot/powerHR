@@ -24,6 +24,7 @@ import jwt from 'jwt-decode'
 
 
 
+
  const isAuthenticated = () => {
     const token = userToken(); 
     return !!token;
@@ -50,7 +51,7 @@ const Routes = () => (
         <Route exact path='/jobstatus' component={JobStatus} />
         <Route exact path='/contactdetails' component={ContactDetails} />
         <Route exact path='/personaldetails' component={PersonalDetails} />
-        <Route exact path='/profile' component={Profile} />
+        <Route exact path='/profile/:userid' component={Profile} />
         <Route exact path='/employeelist' component={EmployeeList} />
         <Route exact path='/adminleave' component={AdminLeave} />
         <Route exact path='/adminmemo' component={AdminMemo} />

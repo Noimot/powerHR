@@ -1,11 +1,13 @@
 import { allEmployeeApi } from '../api/employee'
 import { GET_USER_FAILURE, GET_USER_REQUEST, GET_USER_SUCCESS } from '../actionTypes'
 
+
 const allEmployee = () => async (dispatch) => {
     try {
         dispatch({
             type: GET_USER_REQUEST,
         });
+
         const response = await allEmployeeApi();
         if (response.status === 201) {
             dispatch({

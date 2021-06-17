@@ -3,8 +3,8 @@
     width: 1090px;
 }
 
-.employee-location, .add-employee  {
-    padding: 1.5rem;
+.add-employee, .employee-location  {
+    padding: 1.2rem 1.5rem;
 }
 
 .add-employee, .input-flex, .employee-location form, .employee-location,
@@ -16,7 +16,6 @@
     justify-content: space-between;
     align-items: center;
 }
- 
  
 .employee-location form > p, .input-flex label {
     color: #5E5E5E;
@@ -38,9 +37,16 @@
     color: #4D658D;
 }
 
+.employee-location form {
+    margin-right: 16rem;
+}
+
+.employee-location form div:first-child {
+    margin-right: 2rem;
+}
+
 .input-flex {
     flex-direction: column;
-    margin-left: 2rem;
 }
 
 ul {

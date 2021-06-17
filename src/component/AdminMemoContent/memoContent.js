@@ -26,12 +26,12 @@ const MemoModalContent = ({ modalHandler, memo }) => {
                 <div className='memo-content-modal'>
 
                     <div key={memo.id}>
-                        <p>From: {adminName} </p>
-                        <p>To:employee</p>
-                        <p>Date: {memo.date}</p>
-                        <p>Subject: {memo.subject}</p>
+                        <p><span className='font-color'>From: </span><span className='memo-content-span'>{adminName} </span></p>
+                        <p><span className='font-color'>To: </span><span className='memo-content-span'>{memo.permission}</span></p>
+                        <p><span className='font-color'>Date: </span>{memo.date.split('T')[0]}</p>
+                        <p><span className='font-color'>Subject: </span><span style={{fontWeight: 'bold'}}>{memo.subject}</span></p>
                         <div>
-                            <p>MEMO</p>
+                            <p><span className='font-color'>MEMO</span></p>
                             <p>{memo.memos}</p>
                         </div>
                     </div>

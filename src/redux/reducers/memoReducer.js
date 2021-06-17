@@ -1,4 +1,4 @@
-import { GET_USER_FAILURE, GET_USER_REQUEST, GET_USER_SUCCESS } from '../actionTypes'
+import { GET_MEMO_FAILURE, GET_MEMO_REQUEST, GET_MEMO_SUCCESS } from '../actionTypes'
 
 const initialState = {
     loading: false,
@@ -11,14 +11,14 @@ const initialState = {
 
 const memoReducer = (state = initialState, { type, payload }) => {
     switch (type) {
-        case GET_USER_REQUEST:
+        case GET_MEMO_REQUEST:
             return {
                 ...state,
                 loading: true,
                 loginError: false
             }
 
-        case GET_USER_SUCCESS:
+        case GET_MEMO_SUCCESS:
             return {
                 ...state,
                 loginError: false,
@@ -26,7 +26,7 @@ const memoReducer = (state = initialState, { type, payload }) => {
                 loading: false,
             }
 
-        case GET_USER_FAILURE:
+        case GET_MEMO_FAILURE:
             return {
                 ...state,
                 loginError: true,

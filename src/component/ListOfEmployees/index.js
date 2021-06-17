@@ -7,29 +7,44 @@ import { useDispatch, useSelector } from 'react-redux'
 import allEmployee from '../../redux/action/employee'
 
 
+
 const ListOfEmployees = () => {
 
     const dispatch = useDispatch();
     const employeeDataStore = useSelector(({ allEmployeeReducer }) => allEmployeeReducer)
 
-    const [employeeStore, setEmployeeStore] = useState([])
+    const [data, setData] = useState([...employeeDataStore.data])
 
 console.log(employeeDataStore)
-    // const getDepartment = (department) => {
-    //     console.log(department)
-    //     console.log(employeeStore)
+    const getDepartment = (department) => {
+        console.log(department)
+        console.log(data)
             
-    //     return employeeStore.filter(dataStore => dataStore.department.toLowerCase() === department.toLowerCase())
-    // }
-    const getLocation = (location) => {
-        return employeeStore.filter(dataStore => dataStore.location.toLowerCase() === location.toLowerCase())
+        return employeeDataStore.data.filter((dataStore) => dataStore.department.toLowerCase() === department.toLowerCase())
+    
     }
-
-    // const getName = (name) => {
-    //     return employeeStore.filter(dataStore => dataStore.employee_name.toLowerCase() === name.toLowerCase())
-    // }
-
-
+    const runFilters = ()=>{
+        console.log(searchInput)
+       
+        if(searchInput.department.trim() && searchInput.location.trim() || searchInput.employeeName.trim()){
+            return employeeDataStore.data.filter((dataStore) => 
+            dataStore.department.toLowerCase() === searchInput.department.toLowerCase() &&
+            dataStore.location.toLowerCase() === searchInput.location.toLowerCase() ||
+            dataStore.employee_name.toLowerCase() === searchInput.employeeName.toLowerCase()
+            )
+        }
+        if(searchInput.department.trim() && !searchInput.location.trim()){
+            return employeeDataStore.data.filter((dataStore) => 
+            dataStore.department.toLowerCase() === searchInput.department.toLowerCase()
+            )
+        }
+        if(!searchInput.department.trim() && searchInput.location.trim()){
+            return employeeDataStore.data.filter((dataStore) => 
+            dataStore.location.toLowerCase() === searchInput.location.toLowerCase()
+            )
+        }
+    }
+   
 
 
     useEffect(() => {
@@ -37,7 +52,7 @@ console.log(employeeDataStore)
     }, [dispatch])
 
     useEffect(() => {
-        setEmployeeStore(employeeDataStore)
+        setData(employeeDataStore.data)
     }, [employeeDataStore])
 
 
@@ -58,38 +73,30 @@ console.log(employeeDataStore)
     //     const name = e.target.name;
     //     const value = e.target.value;
     //     setSearchInput({ ...searchInput, [name]: value })
-    //     setEmployeeStore(employeeDataStore.data)
+    //     setData(employeeDataStore.data)
     // }
 
 
 
     const handleChange = (e) => {
+               setData(employeeDataStore.data)
         const name = e.target.name;
         const value = e.target.value;
         setSearchInput({ ...searchInput, [name]: value })
-        const filteredEmployeeList = employeeDataStore.data.filter( (list) => list?.department?.toLowerCase().includes(value.toLowerCase()))
-        console.log({filteredEmployeeList})
-        setEmployeeStore(filteredEmployeeList)
-        // setEmployeeStore(employeeDataStore.data)
     }
 
 
    
 
     const handleKeypress = (e) => {
-    // if (e.key === 'Enter') {
-    // if (!searchInput.department.trim()) return
-    //     const departmentValue = getDepartment(searchInput.department.trim())
-    //     setEmployeeStore([...departmentValue])
-    // }
-    // if (e.key === 'Enter') {
-    //     const locationValue = getLocation(searchInput.location.trim())
-    //     setEmployeeStore([...locationValue])
-    // }
-    // if (e.key === 'Enter') {
-    //     const nameValue = getName(searchInput.employeeName.trim())
-    //     setEmployeeStore([...nameValue])
-    // }
+    if (e.key === 'Enter') {
+    // if (!searchInput.department.trim()) return;
+    console.log('run',searchInput.department)
+    //    const filteredData = getDepartment(searchInput.department.trim());
+       const filteredData = runFilters();
+       console.log(filteredData)
+        setData([...filteredData])
+    }
     }
 
 
@@ -97,12 +104,12 @@ console.log(employeeDataStore)
 
         <section className='employee-list-container'>
             <div className='employee-location'>
-
+            <p>FILTER BY:</p>
                 <form>
-                    <p>FILTERED BY:</p>
+                   
                     <div className='input-flex'>
                         <label htmlFor='department'>Department</label>
-                        <input type='text' name='department' id='department' value={searchInput.department} onChange={handleChange} />
+                        <input type='text' name='department' id='department' value={searchInput.department} onChange={handleChange} onKeyPress={(e) => handleKeypress(e)} />
                     </div>
                     <div className='input-flex'>
                         <label htmlFor='location'>Location</label>
@@ -127,7 +134,7 @@ console.log(employeeDataStore)
             <EmployeeModal open={open} modalHandler={modalHandler} />
 
 
-            <BasicTable employeeDataStore={employeeStore.length > 0? employeeStore: employeeDataStore} />
+            <BasicTable employeeDataStore={data.length > 0? data: []} />
         </section>
     )
 }

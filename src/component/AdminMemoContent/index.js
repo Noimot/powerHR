@@ -60,10 +60,10 @@ const MemoContent = () => {
                         }}>
                             <p style={{color: '#D4293D', fontWeight:'bold'}}>CLICK TO VIEW MEMO</p>
                             {/* <DirectionSnackbar /> */}
-                            <p>From: {adminName} </p>
-                            <p>To:employee</p>
-                            <p>Date: {memoList.date}</p>
-                            <p>Subject: {memoList.subject}</p>
+                            <p><span className='font-color'>From: </span><span style={{color:'#2C4770'}}>{adminName}</span> </p>
+                            <p><span className='font-color'>To: </span>{memoList.permission}</p>
+                            <p><span className='font-color'>Date: </span>{memoList.date.split('T')[0]}</p>
+                            <p><span className='font-color'>Subject: </span><span style={{fontWeight: 'bold'}}>{memoList.subject}</span></p>
                             <hr />
 
                         </div>

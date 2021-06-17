@@ -10,6 +10,7 @@ import leaveRequestReducer from './leaveRequestReducer'
 import pendingLeaveReducer from './pendingLeave'
 import leaveStatusReducer from './leaveStatusReducer'
 import employeeLeaveStatusReducer from './employeeLeaveStatus'
+import employeeUseridReducer from './employeeuserid'
 
 
 export default combineReducers({
@@ -24,4 +25,5 @@ export default combineReducers({
     pendingLeaveReducer,
     leaveStatusReducer,
     employeeLeaveStatusReducer,
+    employeeUseridReducer,
 })

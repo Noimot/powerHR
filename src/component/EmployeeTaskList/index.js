@@ -34,7 +34,7 @@ const Todo = () => {
     return (
         <>
             {taskStore.loading && <div className='loading-spinner'><img src={spinner} alt='spinner' />&nbsp;&nbsp;Loading.....</div>}
-            {taskStore.getTasks.filter((filteredTask) => filteredTask.iscompleted === false)
+            {taskStore.getTasks.filter((filteredTask) => filteredTask.iscompleted !== true)
             .map((task) =>
                 <div className='all-tasks' style={{ display: 'flex', alignItems: 'center' }}>
                     <input key={task.id} name='id' value={task.id} type='checkbox' onChange={(e) => handleChange(e)} />

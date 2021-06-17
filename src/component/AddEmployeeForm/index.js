@@ -22,12 +22,7 @@ const AddEmployeeForm = ({ modalHandler }) => {
     const handleClick = async(e) => {
         e.preventDefault();
         console.log(employeeData.employee_name, employeeData.personal_email, employeeData.company_email)
-        // dispatch(AddNewEmployee({
-        //     employee_name:employeeData.employee_name,
-        //     personal_email:employeeData.personal_email,
-        //     company_email:employeeData.company_email
-        // }))
-
+        
         const response = await addEmployeeApi({
             employee_name: employeeData.employee_name,
             personal_email: employeeData.personal_email,
